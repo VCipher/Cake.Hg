@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package >
+    <metadata>
+        <id>Cake.Hg</id>
+        <version>$version$</version>
+        <title>Cake.Hg</title>
+        <authors>vCipher</authors>
+        <owners>vCipher</owners>
+        <description>Cake AddIn that extends Cake with Mercurial features</description>
+        <copyright>$copyright$</copyright>
+        <projectUrl>https://github.com/vCipher/Cake.Hg</projectUrl>
+        <tags>cake hg mercurial</tags>
+    </metadata>
+    <files>
+        <file src="bin\$configuration$\$id$.xml" target="lib\net461" />
+        <file src="bin\$configuration$\$id$.pdb" target="lib\net461" />
+    </files>
+</package>

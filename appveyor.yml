@@ -1,0 +1,7 @@
+version: '{build}'
+os: Visual Studio 2017
+
+build_script:
+- ps: .\build.ps1 -Target "AppVeyor" -Verbosity "Normal" -Configuration "Release"
+
+test: off
