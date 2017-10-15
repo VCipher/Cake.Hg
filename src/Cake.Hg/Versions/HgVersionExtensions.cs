@@ -24,14 +24,14 @@ namespace Cake.Hg.Versions
         /// </summary>
         /// <param name="repository">Mercurial repository</param>
         /// <param name="path">Relative project path</param>
-        /// <param name="settings">Hg version settings</param>
+        /// <param name="settings">Hg increment version settings</param>
         /// <param name="info">Next project version</param>
         /// <returns></returns>
-        public static bool TryIncrementVersion(this Repository repository, string path, HgVersionSettings settings, out HgVersionInfo info)
+        public static bool TryIncrementVersion(this Repository repository, string path, HgIncrementVersionSettings settings, out HgVersionInfo info)
         {
             info = repository.VersionInfo(settings);
 
-            var tip = repository.Tip();
+            var tip = repository.Changeset(RevSpec.ByBranch(settings.Branch));
             var revisions = GetDiffRevisions(info, tip);
 
             var diff = repository.Diff(new DiffCommand()

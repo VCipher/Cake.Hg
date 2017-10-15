@@ -124,7 +124,7 @@ namespace Cake.HgTests
             Tag(project: "OtherProject", version: "0.0.3");
             #endregion
 
-            var settings = new HgVersionSettings
+            var settings = new HgIncrementVersionSettings
             {
                 Project = project
             };
@@ -144,7 +144,7 @@ namespace Cake.HgTests
             Repository.Init();
             WriteTextFileAndCommit("SomeProject/index.txt", "dummy");
 
-            var settings = new HgVersionSettings
+            var settings = new HgIncrementVersionSettings
             {
                 Project = project
             };
@@ -162,7 +162,7 @@ namespace Cake.HgTests
             Repository.Init();
             WriteTextFileAndCommit("SomeProject/index.txt", "dummy");
 
-            var settings = new HgVersionSettings();
+            var settings = new HgIncrementVersionSettings();
             var result = Repository.TryIncrementVersion(string.Empty, settings, out var info);
 
             Assert.That(result, Is.True);
