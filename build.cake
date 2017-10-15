@@ -1,3 +1,5 @@
+#tool "nuget:?package=NUnit.ConsoleRunner"
+
 var target = Argument("target", "Build");
 var configuration = Argument("configuration", "Release");
 
@@ -37,7 +39,12 @@ Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    Information("Test completed...");
+    var settings = new NUnit3Settings 
+    {
+        NoResults = true
+    };
+
+    NUnit3("./**/bin/" + configuration + "/*Tests.dll", settings);
 });
 
 Task("NuGet-Pack")
