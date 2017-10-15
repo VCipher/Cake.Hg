@@ -23,10 +23,26 @@ namespace Cake.HgTests
             DeleteTempRepository(Repository);
         }
         
-        protected static void WriteTextFileAndCommit(Repository repo, string fileName, string contents, string commitMessage)
+        protected void WriteTextFileAndCommit(string fileName, string content, string commitMessage = null)
         {
-            File.WriteAllText(Path.Combine(repo.Path, fileName), contents);
-            repo.Commit(new CommitCommand { Message = commitMessage, AddRemove = true });
+            var path = Path.Combine(Repository.Path, fileName);
+            var fileInfo = new FileInfo(path);
+            var message = GetCommitMessage(fileInfo, commitMessage);
+
+            Directory.CreateDirectory(fileInfo.Directory.FullName);
+            File.WriteAllText(fileInfo.FullName, content);
+
+            Repository.Commit(new CommitCommand()
+                .WithMessage(message)
+                .WithAddRemove(true));
+        }
+
+        private string GetCommitMessage(FileInfo fileInfo, string commitMessage)
+        {
+            if (!string.IsNullOrEmpty(commitMessage))
+                return commitMessage;
+
+            return fileInfo.Exists ? $"change {fileInfo.Name}" : $"create {fileInfo.Name}";
         }
 
         private static Repository CreateTempRepository()

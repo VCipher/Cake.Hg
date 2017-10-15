@@ -1,7 +1,7 @@
-﻿using System;
-using Cake.Core;
+﻿using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
+using System;
 
 namespace Cake.Hg.Aliases
 {

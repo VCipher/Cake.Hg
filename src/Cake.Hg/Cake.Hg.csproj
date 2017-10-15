@@ -53,13 +53,14 @@
     <Compile Include="Aliases\HgAliases.Tag.cs" />
     <Compile Include="Aliases\HgAliases.Version.cs" />
     <Compile Include="HgExtensions.cs" />
-    <Compile Include="Versions\HgVersion.cs" />
+    <Compile Include="Versions\HgVersionInfo.cs" />
     <Compile Include="Versions\HgVersionSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Versions\HgVersionExtensions.cs" />
     <Compile Include="Versions\TagMatch.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aliases\HgAliases.Diff.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

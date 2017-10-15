@@ -1,6 +1,7 @@
 ﻿using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
+using Mercurial;
 using System;
 
 namespace Cake.Hg.Aliases
@@ -8,20 +9,20 @@ namespace Cake.Hg.Aliases
     public static partial class HgAliases
     {
         /// <summary>
-        /// Create mercurial commit. 
+        /// Get diff of repository. 
         /// </summary>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
-        /// <param name="message">Commit message</param>
+        /// <param name="revisions">Revision or revision range to view a diff</param>
         [CakeMethodAlias]
-        [CakeAliasCategory("Commit")]
-        public static void HgCommit(this ICakeContext context, DirectoryPath repositoryPath, string message)
+        [CakeAliasCategory("Diff")]
+        public static void HgDiff(this ICakeContext context, DirectoryPath repositoryPath, RevSpec revisions)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
-            if (message == null) throw new ArgumentNullException(nameof(message));
+            if (revisions == null) throw new ArgumentNullException(nameof(revisions));
 
-            context.Hg(repositoryPath).Commit(message);
+            context.Hg(repositoryPath).Diff(revisions);
         }
     }
 }

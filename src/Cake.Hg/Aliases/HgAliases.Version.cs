@@ -15,12 +15,12 @@ namespace Cake.Hg.Aliases
         /// <param name="repositoryPath">Path to repository</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Version")]
-        public static HgVersion HgVersion(this ICakeContext context, DirectoryPath repositoryPath)
+        public static HgVersionInfo HgVersion(this ICakeContext context, DirectoryPath repositoryPath)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
 
-            return context.Hg(repositoryPath).Version();
+            return context.Hg(repositoryPath).VersionInfo();
         }
 
         /// <summary>
@@ -31,12 +31,12 @@ namespace Cake.Hg.Aliases
         /// <param name="settings">Hg version settings</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Version")]
-        public static HgVersion HgVersion(this ICakeContext context, DirectoryPath repositoryPath, HgVersionSettings settings)
+        public static HgVersionInfo HgVersion(this ICakeContext context, DirectoryPath repositoryPath, HgVersionSettings settings)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
 
-            return context.Hg(repositoryPath).Version(settings);
+            return context.Hg(repositoryPath).VersionInfo(settings);
         }
     }
 }
