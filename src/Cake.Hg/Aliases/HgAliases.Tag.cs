@@ -3,25 +3,25 @@ using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
 
-namespace Cake.Hg
+namespace Cake.Hg.Aliases
 {
     public static partial class HgAliases
     {
         /// <summary>
-        /// Create mercurial commit. 
+        /// Apply a symbolic identifier for a changeset [tag]. 
         /// </summary>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
-        /// <param name="message">Commit message</param>
+        /// <param name="tagName">Tag name</param>
         [CakeMethodAlias]
-        [CakeAliasCategory("Commit")]
-        public static void HgCommit(this ICakeContext context, DirectoryPath repositoryPath, string message)
+        [CakeAliasCategory("Tag")]
+        public static void HgTag(this ICakeContext context, DirectoryPath repositoryPath, string tagName)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
-            if (message == null) throw new ArgumentNullException(nameof(message));
+            if (tagName == null) throw new ArgumentNullException(nameof(tagName));
 
-            context.Hg(repositoryPath).Commit(message);
+            context.Hg(repositoryPath).Tag(tagName);
         }
     }
 }

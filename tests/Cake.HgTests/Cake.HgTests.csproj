@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E7F175A-9805-4FB2-8708-C358FF9F5CB2}</ProjectGuid>
+    <ProjectGuid>{408DDE05-FF9A-4C9B-9D5A-157B0FB7438C}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cake.Hg</RootNamespace>
-    <AssemblyName>Cake.Hg</AssemblyName>
+    <RootNamespace>Cake.HgTests</RootNamespace>
+    <AssemblyName>Cake.HgTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Cake.Hg.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,14 +31,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Cake.Hg.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cake.Core, Version=0.23.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\packages\Cake.Core.0.23.0\lib\net46\Cake.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Mercurial.Net, Version=1.1.1.607, Culture=neutral, PublicKeyToken=9e2fabf3af85dba9, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Mercurial.Net.1.1.1.607\lib\net35-Client\Mercurial.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,23 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aliases\HgAliases.Commit.cs" />
-    <Compile Include="Aliases\HgAliases.cs" />
-    <Compile Include="Aliases\HgAliases.Init.cs" />
-    <Compile Include="Aliases\HgAliases.Tag.cs" />
-    <Compile Include="Aliases\HgAliases.Version.cs" />
-    <Compile Include="HgExtensions.cs" />
-    <Compile Include="Versions\HgVersion.cs" />
-    <Compile Include="Versions\HgVersionSettings.cs" />
+    <Compile Include="HgVersionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Versions\HgVersionExtensions.cs" />
-    <Compile Include="Versions\TagMatch.cs" />
+    <Compile Include="RepositoryTestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cake.Hg.nuspec" />
+    <ProjectReference Include="..\..\src\Cake.Hg\Cake.Hg.csproj">
+      <Project>{8e7f175a-9805-4fb2-8708-c358ff9f5cb2}</Project>
+      <Name>Cake.Hg</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
