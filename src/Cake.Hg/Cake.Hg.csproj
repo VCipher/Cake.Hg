@@ -59,7 +59,6 @@
     <Compile Include="Versioning\HgVersionSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Versioning\HgVersionExtensions.cs" />
-    <Compile Include="Versioning\TagMatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aliases\HgAliases.Diff.cs" />

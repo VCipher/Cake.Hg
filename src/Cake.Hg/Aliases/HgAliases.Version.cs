@@ -20,7 +20,7 @@ namespace Cake.Hg.Aliases
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
 
-            return context.Hg(repositoryPath).VersionInfo();
+            return context.Hg(repositoryPath).GetVersionInfo();
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Cake.Hg.Aliases
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
 
-            return context.Hg(repositoryPath).VersionInfo(settings);
+            return context.Hg(repositoryPath).GetVersionInfo(settings);
         }
     }
 }

@@ -21,12 +21,99 @@ namespace Cake.Hg.Versioning
             , RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         /// <summary>
-        /// Update AssemblyInfo.cs file with actual project version
+        /// Add version info tag for changeset.
+        /// </summary>
+        /// <param name="repository">Mercurial repository</param>
+        /// <param name="info">Project version info</param>
+        public static void Tag(this Repository repository, HgVersionInfo info)
+        {
+            if (repository == null)
+                throw new ArgumentNullException(nameof(repository));
+
+            if (info == null)
+                throw new ArgumentNullException(nameof(info));
+
+            repository.Tag(new TagCommand()
+                .WithName($"{info.Project} {info.Version}")
+                .WithRevision(info.Changeset.Revision));
+        }
+
+        /// <summary>
+        /// Get project version info.
+        /// </summary>
+        /// <param name="repository">Mercurial repository</param>
+        /// <param name="settings">Hg version settings</param>
+        public static HgVersionInfo GetVersionInfo(this Repository repository, HgVersionSettings settings = null)
+        {
+            if (repository == null)
+                throw new ArgumentNullException(nameof(repository));
+
+            // todo: add branch filtering
+            settings = settings ?? new HgVersionSettings();
+            var resultTag = repository.Tags()
+                .LastOrDefault(tag => IsMatch(tag, settings));
+
+            if (resultTag == null)
+                return new HgVersionInfo(settings.ProjectName);
+
+            return repository.GetVersionInfo(resultTag);
+        }
+
+        /// <summary>
+        /// Get project version info by tag.
+        /// </summary>
+        /// <param name="repository">Mercurial repository</param>
+        /// <param name="tag">Mercurial tag</param>
+        /// <returns></returns>
+        public static HgVersionInfo GetVersionInfo(this Repository repository, Tag tag)
+        {
+            if (repository == null)
+                throw new ArgumentNullException(nameof(repository));
+
+            if (tag == null)
+                throw new ArgumentNullException(nameof(tag));
+
+            var match = TagVersionPattern.Match(tag.Name);
+            var project = match.Groups["proj"].Value;
+            var version = new Version(match.Groups["ver"].Value);
+            var changeset = repository.Changeset(tag.RevisionNumber);
+
+            return new HgVersionInfo(project, version, changeset);
+        }
+
+        /// <summary>
+        /// Commit project version info.
+        /// </summary>
+        /// <param name="repository">Mercurial repository</param>
+        /// <param name="info">Project version info</param>
+        public static void CommitVersionInfo(this Repository repository, HgVersionInfo info)
+        {
+            if (repository == null)
+                throw new ArgumentNullException(nameof(repository));
+
+            if (info == null)
+                throw new ArgumentNullException(nameof(info));
+
+            // get actual changeset information
+            var changeset = repository.Changeset(info.Changeset.Revision);
+            var expected = $"{info.Project} {info.Version}";
+
+            if (changeset.Tags.Any(tag => StringComparer.OrdinalIgnoreCase.Equals(tag, expected)))
+                return;
+
+            repository.Tag(info);
+        }
+
+        /// <summary>
+        /// Update AssemblyInfo.cs file with actual project version.
         /// </summary>
         /// <param name="repository">Mercurial repository</param>
         /// <param name="settings">Hg update assembly version info settings</param>
         public static void UpdateAssemblyInfo(this Repository repository, HgUpdateAssemblyInfoSettings settings = null)
         {
+            if (repository == null)
+                throw new ArgumentNullException(nameof(repository));
+            
             settings = settings ?? new HgUpdateAssemblyInfoSettings();
             repository.TryIncrementVersion(out var info, settings);
 
@@ -41,28 +128,19 @@ namespace Cake.Hg.Versioning
         }
 
         /// <summary>
-        /// Add version info tag for changeset.
+        /// Try to get next project version by its change history.
         /// </summary>
         /// <param name="repository">Mercurial repository</param>
-        /// <param name="info">Project version info</param>
-        public static void Tag(this Repository repository, HgVersionInfo info)
-        {
-            repository.Tag(new TagCommand()
-                .WithName($"{info.Project} {info.Version}")
-                .WithRevision(info.Changeset.Revision));
-        }
-
-        /// <summary>
-        /// Try to get next project version by relative project path.
-        /// </summary>
-        /// <param name="repository">Mercurial repository</param>
-        /// <param name="info">Next project version</param>
+        /// <param name="info">Next project version, if there are any project changes, otherwise current project version</param>
         /// <param name="settings">Hg increment version settings</param>
         /// <returns></returns>
         public static bool TryIncrementVersion(this Repository repository, out HgVersionInfo info, HgIncrementVersionSettings settings = null)
         {
+            if (repository == null)
+                throw new ArgumentNullException(nameof(repository));
+            
             settings = settings ?? new HgIncrementVersionSettings();
-            info = repository.VersionInfo(settings);
+            info = repository.GetVersionInfo(settings);
 
             var tip = repository.Changeset(RevSpec.ByBranch(settings.Branch));
             var revisions = GetDiffRevisions(info, tip);
@@ -80,33 +158,6 @@ namespace Cake.Hg.Versioning
             return true;
         }
 
-        /// <summary>
-        /// Get the mercurial version info for the project. 
-        /// </summary>
-        /// <param name="repository">Mercurial repository</param>
-        public static HgVersionInfo VersionInfo(this Repository repository)
-        {
-            return VersionInfo(repository, new HgVersionSettings());
-        }
-
-        /// <summary>
-        /// Get the mercurial version info for the project. 
-        /// </summary>
-        /// <param name="repository">Mercurial repository</param>
-        /// <param name="settings">Hg version settings</param>
-        public static HgVersionInfo VersionInfo(this Repository repository, HgVersionSettings settings = null)
-        {
-            settings = settings ?? new HgVersionSettings();
-            var resultTuple = repository.Tags()
-                .Select(tag => new TagMatch(tag, TagVersionPattern.Match(tag.Name)))
-                .LastOrDefault(tuple => IsMatch(tuple.Match, settings));
-
-            if (resultTuple == null)
-                return new HgVersionInfo(settings.ProjectName);
-
-            return GetVersion(repository, resultTuple);
-        }
-
         private static RevSpec GetDiffRevisions(HgVersionInfo info, Changeset tip)
         {
             var from = info?.Changeset?.Revision ?? RevSpec.Null;
@@ -115,8 +166,9 @@ namespace Cake.Hg.Versioning
             return RevSpec.Range(from, to);
         }
 
-        private static bool IsMatch(Match match, HgVersionSettings settings)
+        private static bool IsMatch(Tag tag, HgVersionSettings settings)
         {
+            var match = TagVersionPattern.Match(tag.Name);
             return match.Success && IsProjectMatch(match, settings);
         }
 
@@ -126,15 +178,6 @@ namespace Cake.Hg.Versioning
                 return true;
 
             return StringComparer.OrdinalIgnoreCase.Equals(match.Groups["proj"].Value, settings.ProjectName);
-        }
-
-        private static HgVersionInfo GetVersion(Repository repository, TagMatch tuple)
-        {
-            var project = tuple.Match.Groups["proj"].Value;
-            var version = new Version(tuple.Match.Groups["ver"].Value);
-            var changeset = repository.Changeset(tuple.Tag.RevisionNumber);
-
-            return new HgVersionInfo(project, version, changeset);
         }
     }
 }

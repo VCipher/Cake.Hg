@@ -5,11 +5,6 @@ namespace Cake.Hg.Versioning
     public class HgIncrementVersionSettings : HgVersionSettings
     {
         /// <summary>
-        /// Branch name
-        /// </summary>
-        public string Branch { get; set; }
-
-        /// <summary>
         /// Relative project path
         /// </summary>
         public string ProjectPath { get; set; }
@@ -24,7 +19,6 @@ namespace Cake.Hg.Versioning
         /// </summary>
         public HgIncrementVersionSettings() : base()
         {
-            Branch = "default";
             ProjectPath = string.Empty;
             Increment = DefaultIncrement;
         }

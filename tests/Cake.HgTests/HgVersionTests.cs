@@ -21,7 +21,7 @@ namespace Cake.HgTests
         }
 
         [Test]
-        public void VersionInfo_Simple()
+        public void GetVersionInfo_Simple()
         {
             Repository.Init();
             WriteTextAndCommit("test.txt", "dummy");
@@ -30,7 +30,7 @@ namespace Cake.HgTests
             Tag(version: "0.0.2");
             Tag(version: "0.0.3");
 
-            var info = Repository.VersionInfo();
+            var info = Repository.GetVersionInfo();
             var changeset = GetLastChangeset();
 
             Assert.That(changeset.Tags, Has.Exactly(1).EqualTo("0.0.3"));
@@ -42,7 +42,7 @@ namespace Cake.HgTests
         [Test]
         [TestCase("SomeProject")]
         [TestCase("OtherProject")]
-        public void VersionInfo_ManyProjects(string project)
+        public void GetVersionInfo_ManyProjects(string project)
         {
             Repository.Init();
             WriteTextAndCommit("test.txt", "dummy");
@@ -59,7 +59,7 @@ namespace Cake.HgTests
                 ProjectName = project
             };
 
-            var info = Repository.VersionInfo(settings);
+            var info = Repository.GetVersionInfo(settings);
             var changeset = GetLastChangeset(project);
 
             Assert.That(changeset.Tags, Has.Exactly(1).EqualTo($"{project} 0.0.3"));
@@ -71,7 +71,7 @@ namespace Cake.HgTests
         [Test]
         [TestCase("SomeProject")]
         [TestCase("OtherProject")]
-        public void VersionInfo_ManyProjects_SameRevision(string project)
+        public void GetVersionInfo_ManyProjects_SameRevision(string project)
         {
             Repository.Init();
             WriteTextAndCommit("test.txt", "dummy");
@@ -90,7 +90,7 @@ namespace Cake.HgTests
                 ProjectName = project
             };
 
-            var info = Repository.VersionInfo(settings);
+            var info = Repository.GetVersionInfo(settings);
             var changeset = GetLastChangeset(project);
 
             Assert.That(changeset.Tags, Has.Exactly(2).Contains("0.0.3"));
