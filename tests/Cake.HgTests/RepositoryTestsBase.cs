@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading;
 using Mercurial;
 using NUnit.Framework;
+using System.Reflection;
 
 namespace Cake.HgTests
 {
@@ -23,7 +24,7 @@ namespace Cake.HgTests
             DeleteTempRepository(Repository);
         }
         
-        protected void WriteTextFileAndCommit(string fileName, string content, string commitMessage = null)
+        protected void WriteTextAndCommit(string fileName, string content, string commitMessage = null)
         {
             var path = Path.Combine(Repository.Path, fileName);
             var fileInfo = new FileInfo(path);
@@ -35,6 +36,22 @@ namespace Cake.HgTests
             Repository.Commit(new CommitCommand()
                 .WithMessage(message)
                 .WithAddRemove(true));
+        }
+
+        protected string ReadText(string path)
+        {
+            var fullPath = Path.Combine(Repository.Path, path);
+            return File.ReadAllText(fullPath);
+        }
+
+        protected string GetResource(string name)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (var stream = assembly.GetManifestResourceStream($"Cake.HgTests.Resources.{name}"))
+            using (var reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
         }
 
         private string GetCommitMessage(FileInfo fileInfo, string commitMessage)

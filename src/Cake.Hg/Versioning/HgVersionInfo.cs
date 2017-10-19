@@ -1,7 +1,7 @@
 ﻿using Mercurial;
 using System;
 
-namespace Cake.Hg.Versions
+namespace Cake.Hg.Versioning
 {
     /// <summary>
     /// Info about project version in mercurial repository

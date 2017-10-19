@@ -1,9 +1,12 @@
 ﻿using Cake.Hg;
-using Cake.Hg.Versions;
+using Cake.Hg.Versioning;
 using Mercurial;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Threading;
 
 namespace Cake.HgTests
 {
@@ -21,7 +24,7 @@ namespace Cake.HgTests
         public void VersionInfo_Simple()
         {
             Repository.Init();
-            WriteTextFileAndCommit("test.txt", "dummy");
+            WriteTextAndCommit("test.txt", "dummy");
 
             Tag(version: "0.0.1");
             Tag(version: "0.0.2");
@@ -42,7 +45,7 @@ namespace Cake.HgTests
         public void VersionInfo_ManyProjects(string project)
         {
             Repository.Init();
-            WriteTextFileAndCommit("test.txt", "dummy");
+            WriteTextAndCommit("test.txt", "dummy");
 
             Tag(project: "SomeProject", version: "0.0.1");
             Tag(project: "OtherProject", version: "0.0.1");
@@ -53,7 +56,7 @@ namespace Cake.HgTests
 
             var settings = new HgVersionSettings
             {
-                Project = project
+                ProjectName = project
             };
 
             var info = Repository.VersionInfo(settings);
@@ -62,7 +65,7 @@ namespace Cake.HgTests
             Assert.That(changeset.Tags, Has.Exactly(1).EqualTo($"{project} 0.0.3"));
             Assert.That(info.Version.ToString(), Is.EqualTo("0.0.3"));
             Assert.That(info.Changeset, Is.EqualTo(changeset));
-            Assert.That(info.Project, Is.EqualTo(settings.Project));
+            Assert.That(info.Project, Is.EqualTo(settings.ProjectName));
         }
 
         [Test]
@@ -71,7 +74,7 @@ namespace Cake.HgTests
         public void VersionInfo_ManyProjects_SameRevision(string project)
         {
             Repository.Init();
-            WriteTextFileAndCommit("test.txt", "dummy");
+            WriteTextAndCommit("test.txt", "dummy");
 
             Tag(project: "SomeProject", version: "0.0.1");
             Tag(project: "OtherProject", version: "0.0.1");
@@ -84,7 +87,7 @@ namespace Cake.HgTests
 
             var settings = new HgVersionSettings
             {
-                Project = project
+                ProjectName = project
             };
 
             var info = Repository.VersionInfo(settings);
@@ -93,7 +96,7 @@ namespace Cake.HgTests
             Assert.That(changeset.Tags, Has.Exactly(2).Contains("0.0.3"));
             Assert.That(info.Version.ToString(), Is.EqualTo("0.0.3"));
             Assert.That(info.Changeset, Is.EqualTo(changeset));
-            Assert.That(info.Project, Is.EqualTo(settings.Project));
+            Assert.That(info.Project, Is.EqualTo(settings.ProjectName));
         }
 
         [Test]
@@ -104,36 +107,37 @@ namespace Cake.HgTests
             Repository.Init();
 
             #region change first project 
-            WriteTextFileAndCommit("SomeProject/index.txt", "dummy");
+            WriteTextAndCommit("SomeProject/index.txt", "dummy");
             Tag(project: "SomeProject", version: "0.0.1");
 
-            WriteTextFileAndCommit("SomeProject/test.txt", "dummy");
+            WriteTextAndCommit("SomeProject/test.txt", "dummy");
             Tag(project: "SomeProject", version: "0.0.2");
 
-            WriteTextFileAndCommit("SomeProject/test.txt", "dummy...");
+            WriteTextAndCommit("SomeProject/test.txt", "dummy...");
             #endregion
 
             #region change second project
-            WriteTextFileAndCommit("OtherProject/index.txt", "dummy");
+            WriteTextAndCommit("OtherProject/index.txt", "dummy");
             Tag(project: "OtherProject", version: "0.0.1");
 
-            WriteTextFileAndCommit("OtherProject/test.txt", "dummy");
+            WriteTextAndCommit("OtherProject/test.txt", "dummy");
             Tag(project: "OtherProject", version: "0.0.2");
 
-            WriteTextFileAndCommit("OtherProject/test.txt", "dummy...");
+            WriteTextAndCommit("OtherProject/test.txt", "dummy...");
             Tag(project: "OtherProject", version: "0.0.3");
             #endregion
 
             var settings = new HgIncrementVersionSettings
             {
-                Project = project
+                ProjectName = project,
+                ProjectPath = project
             };
 
-            var result = Repository.TryIncrementVersion(project, settings, out var info);
+            var result = Repository.TryIncrementVersion(out var info, settings);
 
             Assert.That(result, Is.EqualTo(canIncrementVersion));
             Assert.That(info.Version.ToString(), Is.EqualTo(version));
-            Assert.That(info.Project, Is.EqualTo(settings.Project));
+            Assert.That(info.Project, Is.EqualTo(settings.ProjectName));
         }
 
         [Test]
@@ -142,28 +146,29 @@ namespace Cake.HgTests
         public void TryIncrementVersion_FirstVersion(string project, string version, bool canIncrementVersion)
         {
             Repository.Init();
-            WriteTextFileAndCommit("SomeProject/index.txt", "dummy");
+            WriteTextAndCommit("SomeProject/index.txt", "dummy");
 
             var settings = new HgIncrementVersionSettings
             {
-                Project = project
+                ProjectName = project,
+                ProjectPath = project
             };
 
-            var result = Repository.TryIncrementVersion(project, settings, out var info);
+            var result = Repository.TryIncrementVersion(out var info, settings);
 
             Assert.That(result, Is.EqualTo(canIncrementVersion));
             Assert.That(info.Version.ToString(), Is.EqualTo(version));
-            Assert.That(info.Project, Is.EqualTo(settings.Project));
+            Assert.That(info.Project, Is.EqualTo(settings.ProjectName));
         }
 
         [Test]
         public void TryIncrementVersion_FirstVersion_WholeRepository()
         {
             Repository.Init();
-            WriteTextFileAndCommit("SomeProject/index.txt", "dummy");
+            WriteTextAndCommit("SomeProject/index.txt", "dummy");
 
             var settings = new HgIncrementVersionSettings();
-            var result = Repository.TryIncrementVersion(string.Empty, settings, out var info);
+            var result = Repository.TryIncrementVersion(out var info, settings);
 
             Assert.That(result, Is.True);
             Assert.That(info.Version, Is.EqualTo(new Version(0, 0, 1)));
@@ -174,7 +179,7 @@ namespace Cake.HgTests
         public void Tag_VersionInfo()
         {
             Repository.Init();
-            WriteTextFileAndCommit("SomeProject/index.txt", "dummy");
+            WriteTextAndCommit("SomeProject/index.txt", "dummy");
             
             var version = new Version("0.0.1");
             var project = "SomeProject";            
@@ -186,6 +191,20 @@ namespace Cake.HgTests
             var tag = "SomeProject 0.0.1";
 
             Assert.That(changeset.Tags, Has.Exactly(1).EqualTo(tag));
+        }
+
+        [Test]
+        public void UpdateAssemblyInfo_Default()
+        {
+            Repository.Init();
+            WriteTextAndCommit("Properties/AssemblyInfo.cs", GetResource("AssemblyInfo_Template.txt"));
+            
+            Repository.UpdateAssemblyInfo();
+
+            var expected = GetResource("AssemblyInfo_Expected.txt");
+            var actual = ReadText("Properties/AssemblyInfo.cs");
+
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         private void Tag(string project = null, string version = null, Changeset changeset = null)

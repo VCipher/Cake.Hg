@@ -1,7 +1,7 @@
 ﻿using Mercurial;
 using System.Text.RegularExpressions;
 
-namespace Cake.Hg.Versions
+namespace Cake.Hg.Versioning
 {
     internal sealed class TagMatch
     {

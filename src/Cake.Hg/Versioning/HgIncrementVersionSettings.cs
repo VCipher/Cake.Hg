@@ -1,16 +1,21 @@
 ﻿using System;
 
-namespace Cake.Hg.Versions
+namespace Cake.Hg.Versioning
 {
     public class HgIncrementVersionSettings : HgVersionSettings
     {
         /// <summary>
-        /// Branch name.
+        /// Branch name
         /// </summary>
         public string Branch { get; set; }
 
         /// <summary>
-        /// Project version increment strategy.
+        /// Relative project path
+        /// </summary>
+        public string ProjectPath { get; set; }
+
+        /// <summary>
+        /// Project version increment strategy
         /// </summary>
         public Func<Version, Version> Increment { get; set; }
         
@@ -20,6 +25,7 @@ namespace Cake.Hg.Versions
         public HgIncrementVersionSettings() : base()
         {
             Branch = "default";
+            ProjectPath = string.Empty;
             Increment = DefaultIncrement;
         }
 

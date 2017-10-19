@@ -1,7 +1,7 @@
 ﻿using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
-using Cake.Hg.Versions;
+using Cake.Hg.Versioning;
 using System;
 
 namespace Cake.Hg.Aliases
