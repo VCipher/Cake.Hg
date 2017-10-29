@@ -53,6 +53,7 @@
     <Compile Include="Aliases\HgAliases.Tag.cs" />
     <Compile Include="Aliases\HgAliases.Version.cs" />
     <Compile Include="HgExtensions.cs" />
+    <Compile Include="Properties\Namespaces.cs" />
     <Compile Include="Versioning\HgIncrementVersionSettings.cs" />
     <Compile Include="Versioning\HgUpdateAssemblyInfoSettings.cs" />
     <Compile Include="Versioning\HgVersionInfo.cs" />
