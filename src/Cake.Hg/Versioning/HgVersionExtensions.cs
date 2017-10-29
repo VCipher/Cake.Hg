@@ -3,20 +3,25 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedMember.Global
 
 namespace Cake.Hg.Versioning
 {
+    /// <summary>
+    /// Extension methods for projects versioning with semantic version standard 
+    /// </summary>
     public static class HgVersionExtensions
     {
-        private static Regex AssemblyVersionPattern = new Regex(
+        private static readonly Regex AssemblyVersionPattern = new Regex(
             @"^(\s*\[\s*assembly\s*:\s*((System\s*\.)?\s*Reflection\s*\.)?\s*AssemblyVersion\()(.*)(\)\])"
             , RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Multiline);
 
-        private static Regex AssemblyFileVersionPattern = new Regex(
+        private static readonly Regex AssemblyFileVersionPattern = new Regex(
             @"^(\s*\[\s*assembly\s*:\s*((System\s*\.)?\s*Reflection\s*\.)?\s*AssemblyFileVersion\()(.*)(\)\])"
             , RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Multiline);
 
-        private static Regex TagVersionPattern = new Regex(
+        private static readonly Regex TagVersionPattern = new Regex(
             @"(?<proj>[^\s\d]*)?\s*(?<ver>(\d+\.)*(\d+))"
             , RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
@@ -43,6 +48,7 @@ namespace Cake.Hg.Versioning
         /// </summary>
         /// <param name="repository">Mercurial repository</param>
         /// <param name="settings">Hg version settings</param>
+        /// <returns>Project version info</returns>
         public static HgVersionInfo GetVersionInfo(this Repository repository, HgVersionSettings settings = null)
         {
             if (repository == null)
@@ -64,7 +70,7 @@ namespace Cake.Hg.Versioning
         /// </summary>
         /// <param name="repository">Mercurial repository</param>
         /// <param name="tag">Mercurial tag</param>
-        /// <returns></returns>
+        /// <returns>Project version info</returns>
         public static HgVersionInfo GetVersionInfo(this Repository repository, Tag tag)
         {
             if (repository == null)
@@ -133,7 +139,7 @@ namespace Cake.Hg.Versioning
         /// <param name="repository">Mercurial repository</param>
         /// <param name="info">Next project version, if there are any project changes, otherwise current project version</param>
         /// <param name="settings">Hg increment version settings</param>
-        /// <returns></returns>
+        /// <returns>true - if there are any project changes, otherwise false</returns>
         public static bool TryIncrementVersion(this Repository repository, out HgVersionInfo info, HgIncrementVersionSettings settings = null)
         {
             if (repository == null)

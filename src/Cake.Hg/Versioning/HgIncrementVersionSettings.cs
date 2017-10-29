@@ -1,7 +1,14 @@
 ﻿using System;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
+// ReSharper disable InheritdocConsiderUsage
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 
 namespace Cake.Hg.Versioning
 {
+    /// <summary>
+    /// Contains settings used by <see cref="HgVersionExtensions.TryIncrementVersion"/>
+    /// </summary>
     public class HgIncrementVersionSettings : HgVersionSettings
     {
         /// <summary>
@@ -14,10 +21,8 @@ namespace Cake.Hg.Versioning
         /// </summary>
         public Func<Version, Version> Increment { get; set; }
         
-        /// <summary>
-        /// .ctor
-        /// </summary>
-        public HgIncrementVersionSettings() : base()
+        /// <inheritdoc />
+        public HgIncrementVersionSettings()
         {
             ProjectPath = string.Empty;
             Increment = DefaultIncrement;

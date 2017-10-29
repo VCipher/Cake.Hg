@@ -1,5 +1,8 @@
 ﻿using Mercurial;
 using System;
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 
 namespace Cake.Hg.Versioning
 {
@@ -24,8 +27,9 @@ namespace Cake.Hg.Versioning
         public Changeset Changeset { get; set; }
 
         /// <summary>
-        /// .ctor
+        /// Create default project version info
         /// </summary>
+        /// <param name="project">Project name</param>
         public HgVersionInfo(string project)
         {
             Project = project;
@@ -34,7 +38,7 @@ namespace Cake.Hg.Versioning
         }
 
         /// <summary>
-        /// .ctor
+        /// Create project version info
         /// </summary>
         /// <param name="project">Project name</param>
         /// <param name="version">Project version</param>

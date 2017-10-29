@@ -1,8 +1,12 @@
 ﻿using Mercurial;
 using System.Linq;
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace Cake.Hg
 {
+    /// <summary>
+    /// Common Mercurial.NET extension methods
+    /// </summary>
     public static class HgExtensions
     {
         /// <summary>

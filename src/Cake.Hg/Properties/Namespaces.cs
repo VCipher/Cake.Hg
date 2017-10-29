@@ -15,7 +15,7 @@ namespace Cake.Hg.Versioning
 {
     /// <summary>
     /// This namespace contains extensions to Mercurial.NET for versioning projects
-    /// with semantic version standard <see cref="http://semver.org"/>.
+    /// with semantic version standard <see href="http://semver.org"/>.
     /// </summary>
     internal class NamespaceDoc
     { }

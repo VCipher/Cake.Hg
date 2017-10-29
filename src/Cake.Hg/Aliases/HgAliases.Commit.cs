@@ -2,14 +2,21 @@
 using Cake.Core.Annotations;
 using Cake.Core.IO;
 using System;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedMember.Global
 
 namespace Cake.Hg.Aliases
 {
     public static partial class HgAliases
     {
         /// <summary>
-        /// Create mercurial commit. 
+        /// Create mercurial commit.
         /// </summary>
+        /// <example>
+        /// <code>
+        ///     HgCommit("./", "Initial commit");
+        /// </code>
+        /// </example>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
         /// <param name="message">Commit message</param>

@@ -1,5 +1,12 @@
-﻿namespace Cake.Hg.Versioning
+﻿// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
+// ReSharper disable InheritdocConsiderUsage
+
+namespace Cake.Hg.Versioning
 {
+    /// <summary>
+    /// Contains settings used by <see cref="HgVersionExtensions.UpdateAssemblyInfo"/>
+    /// </summary>
     public class HgUpdateAssemblyInfoSettings : HgIncrementVersionSettings
     {
         /// <summary>
@@ -7,10 +14,8 @@
         /// </summary>
         public string AssembyInfoPath { get; set; }
 
-        /// <summary>
-        /// .ctor
-        /// </summary>
-        public HgUpdateAssemblyInfoSettings() : base()
+        /// <inheritdoc />
+        public HgUpdateAssemblyInfoSettings()
         {
             AssembyInfoPath = "Properties/AssemblyInfo.cs";
         }

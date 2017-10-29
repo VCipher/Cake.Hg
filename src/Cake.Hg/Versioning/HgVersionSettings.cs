@@ -1,5 +1,11 @@
-﻿namespace Cake.Hg.Versioning
+﻿// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
+
+namespace Cake.Hg.Versioning
 {
+    /// <summary>
+    /// Contains settings used by <see cref="HgVersionExtensions.GetVersionInfo(Mercurial.Repository,Cake.Hg.Versioning.HgVersionSettings)"/>.
+    /// </summary>
     public class HgVersionSettings
     {
         /// <summary>
