@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Hg", "src\Cake.Hg\Cake.Hg.csproj", "{8E7F175A-9805-4FB2-8708-C358FF9F5CB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Hg", "Cake.Hg\Cake.Hg.csproj", "{8E7F175A-9805-4FB2-8708-C358FF9F5CB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.HgTests", "tests\Cake.HgTests\Cake.HgTests.csproj", "{408DDE05-FF9A-4C9B-9D5A-157B0FB7438C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.HgTests", "Cake.HgTests\Cake.HgTests.csproj", "{408DDE05-FF9A-4C9B-9D5A-157B0FB7438C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
