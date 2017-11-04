@@ -13,9 +13,9 @@
         <tags>cake hg mercurial</tags>
     </metadata>
     <files>
-        <file src="bin\Release\Cake.Hg.dll" target="lib\net461" />
-        <file src="bin\Release\Cake.Hg.xml" target="lib\net461" />
-        <file src="bin\Release\Mercurial.Net.dll" target="lib\net461" />
-        <file src="bin\Release\Mercurial.Net.xml" target="lib\net461" />
+        <file src="Cake.Hg.dll" target="lib\net461" />
+        <file src="Cake.Hg.xml" target="lib\net461" />
+        <file src="Mercurial.Net.dll" target="lib\net461" />
+        <file src="Mercurial.Net.xml" target="lib\net461" />
     </files>
 </package>
