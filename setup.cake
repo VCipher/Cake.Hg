@@ -9,8 +9,7 @@ BuildParameters.SetParameters(context: Context,
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.Hg",
                             appVeyorAccountName: "cakecontrib",
-                            solutionFilePath: "./src/Cake.Hg.sln",
-                            nuspecFilePath: "./src/Cake.Hg/Cake.Hg.nuspec");
+                            solutionFilePath: "./src/Cake.Hg.sln");
 
 BuildParameters.PrintParameters(Context);
 
