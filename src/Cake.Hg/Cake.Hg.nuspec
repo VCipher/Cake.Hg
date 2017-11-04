@@ -5,16 +5,17 @@
         <version>$version$</version>
         <title>Cake.Hg</title>
         <authors>vCipher</authors>
-        <owners>vCipher</owners>
+        <owners>vCipher,cake-contrib</owners>
         <description>Cake AddIn that extends Cake with Mercurial features</description>
         <copyright>$copyright$</copyright>
         <iconUrl>https://raw.githubusercontent.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
-        <projectUrl>https://github.com/vCipher/Cake.Hg</projectUrl>
+        <projectUrl>https://github.com/cake-contrib/Cake.Hg</projectUrl>
         <tags>cake hg mercurial</tags>
     </metadata>
     <files>
-        <file src="bin\$configuration$\*.dll" target="lib\net461" exclude="Cake.Core.dll" />
-        <file src="bin\$configuration$\*.xml" target="lib\net461" exclude="Cake.Core.xml" />
-        <file src="bin\$configuration$\*.pdb" target="lib\net461" exclude="Cake.Core.pdb" />
+        <file src="bin\Release\Cake.Hg.dll" target="lib\net461" />
+        <file src="bin\Release\Cake.Hg.xml" target="lib\net461" />
+        <file src="bin\Release\Mercurial.Net.dll" target="lib\net461" />
+        <file src="bin\Release\Mercurial.Net.xml" target="lib\net461" />
     </files>
 </package>

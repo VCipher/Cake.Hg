@@ -1,19 +1,29 @@
-version: '{build}'
-os: Visual Studio 2017
+# Build script
+init:
+  - git config --global core.autocrlf true
 
+image: Visual Studio 2017
+
+# Build script
 build_script:
-- ps: .\build.ps1 -Target "AppVeyor" -Verbosity "Normal" -Configuration "Release"
+  - ps: .\build.ps1 -Target AppVeyor -Verbosity Diagnostic
 
+# Tests
 test: off
 
-artifacts:
-  - path: 'build\*.nupkg'
+# Branches to build
+branches:
+  # Whitelist
+  only:
+    - develop
+    - master
+    - /r/.*/
+    - /release/.*/
+    - /hotfix/.*/
+    - /feature/.*/
+    - /improve/.*/
 
-deploy:
-- provider: NuGet
-  api_key:
-    secure: 954yUAKqX4ZBQRSlsngNA9FhX0wldFPlYsXfvB56079LGdzOdJYl1LaVAK8Up4Dj
-    artifact: /.*\.nupkg/
-  on:
-    branch: master
-    APPVEYOR_REPO_TAG: /.+/
+# Build cache
+cache:
+- tools -> setup.cake
+- src/packages -> setup.cake
