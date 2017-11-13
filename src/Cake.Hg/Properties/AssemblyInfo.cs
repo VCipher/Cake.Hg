@@ -21,5 +21,3 @@ using System.Runtime.InteropServices;
 // Cake build configuration
 [assembly: CakeNamespaceImport(nameof(Mercurial))]
 [assembly: CakeNamespaceImport(nameof(Cake.Hg))]
-[assembly: CakeNamespaceImport(nameof(Cake.Hg.Aliases))]
-[assembly: CakeNamespaceImport(nameof(Cake.Hg.Versioning))]
