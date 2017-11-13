@@ -54,7 +54,7 @@
     <Compile Include="HgAliases.Tag.cs" />
     <Compile Include="HgAliases.Tip.cs" />
     <Compile Include="HgExtensions.cs" />
-    <Compile Include="Properties\Namespaces.cs" />
+    <Compile Include="Namespaces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

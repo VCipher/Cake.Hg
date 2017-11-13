@@ -1,11 +1,12 @@
-﻿using Cake.Core;
+﻿using System;
+using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
-using System;
+
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable UnusedMember.Global
 
-namespace Cake.Hg.Aliases
+namespace Cake.Hg
 {
     public static partial class HgAliases
     {
