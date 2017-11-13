@@ -51,6 +51,7 @@
     <Compile Include="Aliases\HgAliases.cs" />
     <Compile Include="Aliases\HgAliases.Init.cs" />
     <Compile Include="Aliases\HgAliases.Tag.cs" />
+    <Compile Include="Aliases\HgAliases.Tip.cs" />
     <Compile Include="Aliases\HgAliases.Version.cs" />
     <Compile Include="HgExtensions.cs" />
     <Compile Include="Properties\Namespaces.cs" />
@@ -64,8 +65,7 @@
   <ItemGroup>
     <Compile Include="Aliases\HgAliases.Diff.cs" />
     <None Include="packages.config" />
-    <Compile Include="$(SolutionDir)\SolutionInfo.cs"
-             Condition="Exists('$(SolutionDir)\SolutionInfo.cs')">
+    <Compile Include="$(SolutionDir)\SolutionInfo.cs" Condition="Exists('$(SolutionDir)\SolutionInfo.cs')">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
   </ItemGroup>
