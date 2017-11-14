@@ -20,12 +20,12 @@ namespace Cake.Hg
     {
         /// <summary>
         /// Return mercurial repository. 
+        /// </summary>
         /// <example>
         /// <code>
         ///     var repo = Hg("./");
         /// </code>
         /// </example>
-        /// </summary>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
         /// <returns>Mercurial repository</returns>

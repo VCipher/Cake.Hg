@@ -5,7 +5,7 @@
 namespace Cake.Hg
 {
     /// <summary>
-    /// This namespace contains Mercurial aliases.
+    /// This namespace contains Cake aliases.
     /// </summary>
     [CompilerGenerated]
     internal class NamespaceDoc
