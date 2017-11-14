@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/Cake.Hg/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/Cake.Hg/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake.Hg - API - GuiClient.RevertGui(Repository, RevertGuiCommand) Method</title>
+        <link href="/Cake.Hg/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/highlight.css" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/Cake.Hg/assets/css/override.css" rel="stylesheet">
+        <script src="/Cake.Hg/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/Cake.Hg/assets/js/bootstrap.min.js"></script>        
+        <script src="/Cake.Hg/assets/js/app.min.js"></script>         
+        <script src="/Cake.Hg/assets/js/highlight.pack.js"></script>   
+        <script src="/Cake.Hg/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/Cake.Hg/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/Cake.Hg/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/Cake.Hg/assets/js/html5shiv.min.js"></script>
+        <script src="/Cake.Hg/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/Cake.Hg/" class="logo">
+                            <span>Cake.Hg</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/Cake.Hg/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Parameters">Parameters</a></p>
+<p><a href="#ReturnValue">Return Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/Cake.Hg/assets/js/lunr.min.js"></script>
+    <script src="/Cake.Hg/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/Cake.Hg/api/Mercurial.Net.dll">Mercurial<wbr>.Net<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/Cake.Hg/api/Mercurial.Gui">Mercurial<wbr>.Gui</a></li>
+		<li class="header">Type</li>
+		<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient">GuiClient</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Method Members</li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/6B77AF04">AboutGui<wbr>(AboutGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/A3DE569A">AddGui<wbr>(Repository, <wbr>AddGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/06908999">AnnotateGui<wbr>(Repository, <wbr>AnnotateGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/ACC44B22">AnnotateGui<wbr>(Repository, <wbr>string, <wbr>AnnotateGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/BA5CBC2F">ArchiveGui<wbr>(Repository, <wbr>ArchiveGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/B8C9CB21">BackoutGui<wbr>(Repository, <wbr>BackoutGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/9DC98CA9">BeginExecute<wbr>(Repository, <wbr>IGuiCommand, <wbr>AsyncCallback)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/4179F62A">BisectGui<wbr>(Repository, <wbr>BisectGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/5D38AD65">CloneGui<wbr>(Repository, <wbr>CloneGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/EFB0C445">CommitGui<wbr>(Repository, <wbr>CommitGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/88D165BB">CopyGui<wbr>(Repository, <wbr>string, <wbr>string, <wbr>CopyGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/624C3139">CopyGui<wbr>(Repository, <wbr>CopyGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/3C9522FE">DatamineGui<wbr>(Repository, <wbr>DatamineGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/5D26A935">DiffGui<wbr>(Repository, <wbr>RevSpec, <wbr>DiffGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/1529D66B">DiffGui<wbr>(Repository, <wbr>DiffGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/EB902E8A">DragCopyGui<wbr>(Repository, <wbr>string, <wbr>string, <wbr>DragCopyGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/0DDA6753">DragCopyGui<wbr>(Repository, <wbr>DragCopyGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/AEB19CDD">DragMoveGui<wbr>(Repository, <wbr>string, <wbr>string, <wbr>DragMoveGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/06BF1DD6">DragMoveGui<wbr>(Repository, <wbr>DragMoveGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/F5157ADE">EditIgnoreFiltersGui<wbr>(Repository, <wbr>Edit<wbr>Ignore<wbr>Filters<wbr>Gui<wbr>Command)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/2B2891FA">EmailGui<wbr>(Repository, <wbr>EmailGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/6902BE80">EndExecute<wbr>(Repository, <wbr>IAsyncResult)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/527C1CEE">Execute<wbr>(Repository, <wbr>IGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/747695ED">ForgetGui<wbr>(Repository, <wbr>ForgetGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/A52D1E3E">Get<wbr>Client<wbr>Availability<wbr>(GuiClientType)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/B82C91CB">GetVersion<wbr>()<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/A2EA5264">GuessGui<wbr>(Repository, <wbr>GuessGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/57B489EB">ImportGui<wbr>(Repository, <wbr>ImportGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/0891FF4A">InitGui<wbr>(Repository, <wbr>InitGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/B3B01495">LogGui<wbr>(Repository, <wbr>LogGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/F3E509BE">ManifestGui<wbr>(Repository, <wbr>ManifestGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/5613B6E8">MergeGui<wbr>(Repository, <wbr>MergeGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/7EEEB852">MoveGui<wbr>(Repository, <wbr>string, <wbr>string, <wbr>MoveGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/777B4960">MoveGui<wbr>(Repository, <wbr>MoveGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/18F3F50B">MPatchGui<wbr>(Repository, <wbr>string, <wbr>MPatchGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/ECEA9D1F">MPatchGui<wbr>(Repository, <wbr>MPatchGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/BCB3B9CD">PurgeGui<wbr>(Repository, <wbr>PurgeGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/5869DD46">QueueGui<wbr>(Repository, <wbr>QueueGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/94FC3DB6">QueueManagerGui<wbr>(Repository, <wbr>Queue<wbr>Manager<wbr>Gui<wbr>Command)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/A258DAF8">QueueReorderGui<wbr>(Repository, <wbr>Queue<wbr>Reorder<wbr>Gui<wbr>Command)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/9A4C554E">RebaseGui<wbr>(Repository, <wbr>RevSpec, <wbr>RevSpec, <wbr>RebaseGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/EBDF3602">RebaseGui<wbr>(Repository, <wbr>RebaseGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/72BFA753">RecoveryGui<wbr>(Repository, <wbr>RecoveryGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/84D29B40">RejectsGui<wbr>(Repository, <wbr>string, <wbr>RejectsGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/8B11687A">RejectsGui<wbr>(Repository, <wbr>RejectsGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/453C7B93">RemoveGui<wbr>(Repository, <wbr>RemoveGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/E28B1DD8">RenameGui<wbr>(Repository, <wbr>string, <wbr>string, <wbr>RenameGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/203CB95D">RenameGui<wbr>(Repository, <wbr>RenameGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/A9A02EF0">RepoConfigGui<wbr>(Repository, <wbr>Repo<wbr>Config<wbr>Gui<wbr>Command)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/AC349BD5">ResolveGui<wbr>(Repository, <wbr>ResolveGuiCommand)<wbr></a></li>
+				<li class="selected"><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/3CD8D064">RevertGui<wbr>(Repository, <wbr>RevertGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/D61F28C7">SearchGui<wbr>(Repository, <wbr>SearchGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/15F7DE22">ShellConfigGui<wbr>(<wbr>Shell<wbr>Config<wbr>Gui<wbr>Command)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/A5C3984A">ShelveGui<wbr>(Repository, <wbr>ShelveGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/265809D1">StatusGui<wbr>(Repository, <wbr>StatusGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/AF1AEC25">StripGui<wbr>(Repository, <wbr>RevSpec, <wbr>StripGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/19C3D721">StripGui<wbr>(Repository, <wbr>StripGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/19170824">SynchronizeGui<wbr>(Repository, <wbr>Synchronize<wbr>Gui<wbr>Command)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/C0BF3D69">TagGui<wbr>(Repository, <wbr>RevSpec, <wbr>string, <wbr>TagGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/710FF4D3">TagGui<wbr>(Repository, <wbr>TagGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/9FDA5AB2">UpdateGui<wbr>(Repository, <wbr>RevSpec, <wbr>UpdateGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/7F8F3549">UpdateGui<wbr>(Repository, <wbr>UpdateGuiCommand)<wbr></a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/EC6955A7">UserConfigGui<wbr>(<wbr>User<wbr>Config<wbr>Gui<wbr>Command)<wbr></a></li>
+			<li class="header">Property Members</li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/78C46B35">ClientPath</a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/5E18E1B2">ClientType</a></li>
+				<li><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient/AB75C945">CurrentVersion</a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient">GuiClient</a>.</h3>
+	<h1>RevertGui<wbr>(Repository, <wbr>RevertGuiCommand)<wbr> <small>Method</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            Revert selected files.
+            </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">	
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/Cake.Hg/api/Mercurial.Net.dll">Mercurial<wbr>.Net<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/Cake.Hg/api/Mercurial.Gui">Mercurial<wbr>.Gui</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient">GuiClient</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static void RevertGui(this Repository repository, RevertGuiCommand command = null)</code></pre>
+
+
+
+
+
+	<h1 id="Parameters">Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover three-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>repository</td>
+						<td><a href="/Cake.Hg/api/Mercurial/Repository">Repository</a></td>
+						<td>
+            The <code class="cs"><a href="/Cake.Hg/api/Mercurial/Repository">Repository</a></code> to revert files in.
+            </td>
+					</tr>
+					<tr>
+						<td>command</td>
+						<td><a href="/Cake.Hg/api/Mercurial.Gui/RevertGuiCommand">RevertGuiCommand</a></td>
+						<td>
+            Any extra options to the revert method, or <code class="cs">null</code> for default options.
+            </td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+	<h1 id="ReturnValue">Return Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>void</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

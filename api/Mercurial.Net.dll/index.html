@@ -1,0 +1,1730 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/Cake.Hg/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/Cake.Hg/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake.Hg - API - Mercurial.Net.dll Assembly</title>
+        <link href="/Cake.Hg/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/highlight.css" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/Cake.Hg/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/Cake.Hg/assets/css/override.css" rel="stylesheet">
+        <script src="/Cake.Hg/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/Cake.Hg/assets/js/bootstrap.min.js"></script>        
+        <script src="/Cake.Hg/assets/js/app.min.js"></script>         
+        <script src="/Cake.Hg/assets/js/highlight.pack.js"></script>   
+        <script src="/Cake.Hg/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/Cake.Hg/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/Cake.Hg/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/Cake.Hg/assets/js/html5shiv.min.js"></script>
+        <script src="/Cake.Hg/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/Cake.Hg/" class="logo">
+                            <span>Cake.Hg</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/Cake.Hg/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#EnumTypes">Enum Types</a></p>
+<p><a href="#InterfaceTypes">Interface Types</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/Cake.Hg/assets/js/lunr.min.js"></script>
+    <script src="/Cake.Hg/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+	<li class="header">Assemblies</li>   
+        <li class="selected"><a href="/Cake.Hg/api/Mercurial.Net.dll">Mercurial<wbr>.Net<wbr>.dll</a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>Mercurial<wbr>.Net<wbr>.dll <small>Assembly</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/AboutGuiCommand">AboutGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "about" command:
+            Show the "About TortoiseHg" dialog.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/AddCommand">AddCommand</a></td>
+									<td>
+            This class implements the "hg add" command (<a href="http://www.selenic.com/mercurial/hg.1.html#add"></a>):
+            add the specified files on the next commit.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/AddGuiCommand">AddGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "add" command:
+            Add files.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/AddRemoveCommand">AddRemoveCommand</a></td>
+									<td>
+            This class implements the "hg addremove" command (<a href="http://www.selenic.com/mercurial/hg.1.html#addremove"></a>):
+            add all new files, delete all missing files.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/AnnotateCommand">AnnotateCommand</a></td>
+									<td>
+            This class implements the "hg annotate" command (<a href="http://www.selenic.com/mercurial/hg.1.html#annotate"></a>):
+            show changeset information by line for each file.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/AnnotateGuiCommand">AnnotateGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "annotate" command:
+            Annotate dialog.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/Annotation">Annotation</a></td>
+									<td>
+            This object contains information about an annotated line from a text file
+            in the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ArchiveCommand">ArchiveCommand</a></td>
+									<td>
+            This class implements the "hg archive" command (<a href="http://www.selenic.com/mercurial/hg.1.html#archive"></a>):
+            create an unversioned archive of a repository revision.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/ArchiveGuiCommand">ArchiveGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "archive" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/archive.html#from-command-line"></a>):
+            Create an unversioned archive of a repository revision.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Attributes/ArgumentAttribute">ArgumentAttribute</a></td>
+									<td>
+            This attribute can be applied to properties of command classes to provide
+            the Mercurial executable with options, based on the properties of
+            the command class.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BackoutCommand">BackoutCommand</a></td>
+									<td>
+            This class implements the "hg backout" command (<a href="http://www.selenic.com/mercurial/hg.1.html#backout"></a>):
+            reverse effect of earlier changeset.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/BackoutGuiCommand">BackoutGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "backout" command:
+            Backout tool.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BisectCommand">BisectCommand</a></td>
+									<td>
+            This class implements the "hg bisect" command (<a href="http://www.selenic.com/mercurial/hg.1.html#bisect"></a>):
+            subdivision search of changesets.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/BisectGuiCommand">BisectGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "bisect" command:
+            Show the bisect dialog.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BisectResult">BisectResult</a></td>
+									<td>
+            This class is used as the result of executing the <code class="cs"><a href="/Cake.Hg/api/Mercurial/BisectCommand">BisectCommand</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/Bookmark">Bookmark</a></td>
+									<td>
+            This class encapsulates information about a single bookmark in the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BookmarkCommand">BookmarkCommand</a></td>
+									<td>
+            This class implements the "hg bookmark" command (<a href="http://www.selenic.com/mercurial/hg.1.html#bookmark"></a>):
+            track of a line of development with movable markers.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BookmarksCommand">BookmarksCommand</a></td>
+									<td>
+            This class implements the "hg bookmarks" command (<a href="http://www.selenic.com/mercurial/hg.1.html#bookmarks"></a>):
+            list existing bookmarks.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Attributes/BooleanArgumentAttribute">Boolean<wbr>Argument<wbr>Attribute</a></td>
+									<td>
+            This attribute can be applied to bool-properties in option classes,
+            to specify the option to pass to the executable in case of
+            a <code class="cs">false</code> or <code class="cs">true</code> value. By default, no options
+            will be sent for either value.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BranchCommand">BranchCommand</a></td>
+									<td>
+            This class implements the "hg branch" command (<a href="http://www.selenic.com/mercurial/hg.1.html#branch"></a>):
+            set or show the current branch name.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BranchesCommand">BranchesCommand</a></td>
+									<td>
+            This class implements the "hg branches" command (<a href="http://www.selenic.com/mercurial/hg.1.html#branches"></a>):
+            list repository named branches.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BranchHead">BranchHead</a></td>
+									<td>
+            This class encapsulates information about a single persistent BranchHead in the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/BrowserGuiCommandBase_1">Browser<wbr>Gui<wbr>Command<wbr>Base<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This is the base class for <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/AnnotateGuiCommand">AnnotateGuiCommand</a></code> and <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/ManifestGuiCommand">ManifestGuiCommand</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BundleCommand">BundleCommand</a></td>
+									<td>
+            This class implements the "hg bundle" command (<a href="http://www.selenic.com/mercurial/hg.1.html#bundle"></a>):
+            create a changegroup file.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.CaseGuard/CaseGuardAddCommandExtensions">Case<wbr>Guard<wbr>Add<wbr>Command<wbr>Extensions</a></td>
+									<td>
+            This class adds extension methods to the <code class="cs"><a href="/Cake.Hg/api/Mercurial/AddCommand">AddCommand</a></code> class, for
+            the CaseGuard extension.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.CaseGuard/CaseGuardAddRemoveCommandExtensions">Case<wbr>Guard<wbr>Add<wbr>Remove<wbr>Command<wbr>Extensions</a></td>
+									<td>
+            This class adds extension methods to the <code class="cs"><a href="/Cake.Hg/api/Mercurial/AddRemoveCommand">AddRemoveCommand</a></code> class, for
+            the CaseGuard extension.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.CaseGuard/CaseGuardExtension">CaseGuardExtension</a></td>
+									<td>
+            This class contains logic for the caseguard Mercurial extension.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/CatCommand">CatCommand</a></td>
+									<td>
+            This class implements the "hg cat" command (<a href="http://www.selenic.com/mercurial/hg.1.html#cat"></a>):
+            Retrieve the current or given revision of files.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/Changeset">Changeset</a></td>
+									<td>
+            This class encapsulates a changeset from the log.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ChangesetPathAction">ChangesetPathAction</a></td>
+									<td>
+            This class encapsulates a path with an associated action related to a
+            <code class="cs"><a href="/Cake.Hg/api/Mercurial/Changeset">Changeset</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ChangesetXmlParser">ChangesetXmlParser</a></td>
+									<td>
+            This class implements a basic XML-based changeset parser, that parses changeset information
+            as reported by the Mercurial command line client, in XML format.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.Churn/ChurnCommand">ChurnCommand</a></td>
+									<td>
+            This class implements the "hg churn" extension command (<a href="http://www.selenic.com/mercurial/hg.1.html#churn"></a>):
+            calculate histogram of changes to the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.Churn/ChurnExtension">ChurnExtension</a></td>
+									<td>
+            This class contains logic for the caseguard Mercurial extension.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.Churn/ChurnGroup">ChurnGroup</a></td>
+									<td>
+            This class is returned by the <code class="cs"><a href="/Cake.Hg/api/Mercurial.Extensions.Churn/ChurnCommand">ChurnCommand</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/Client">Client</a></td>
+									<td>
+            This class encapsulates the Mercurial client application.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Configuration/ClientConfigurationCollection">Client<wbr>Configuration<wbr>Collection</a></td>
+									<td>
+            This class encapsulates the Mercurial command line client configuration information.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/CloneCommand">CloneCommand</a></td>
+									<td>
+            This class implements the "hg clone" command (<a href="http://www.selenic.com/mercurial/hg.1.html#clone"></a>):
+            make a copy of an existing repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/CloneGuiCommand">CloneGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "clone" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/clone.html#from-command-line"></a>):
+            Clone a repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/CollectionExtensions">CollectionExtensions</a></td>
+									<td>
+            This class contains extension methods for <code class="cs"><a href="/Cake.Hg">Collection&lt;T&gt;</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/CommandBase_1">CommandBase<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This is the base class for option classes for various commands for
+            the Mercurial and TortoiseHg client.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/CommandProcessor">CommandProcessor</a></td>
+									<td>
+            This class handles executing external executables in order to process
+            commands.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/CommitCommand">CommitCommand</a></td>
+									<td>
+            This class implements the "hg commit" command (<a href="http://www.selenic.com/mercurial/hg.1.html#commit"></a>):
+            commit the specified files or all outstanding changes.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/CommitGuiCommand">CommitGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "commit" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/commit.html#from-command-line"></a>):
+            Commit changes in the working folder to the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ConfigurationEntry">ConfigurationEntry</a></td>
+									<td>
+            This class encapsulates a single line of configuration information from the
+            <code class="cs"><a href="/Cake.Hg/api/Mercurial/ShowConfigCommand">ShowConfigCommand</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/CopyCommand">CopyCommand</a></td>
+									<td>
+            This class implements the "hg copy" command (<a href="http://www.selenic.com/mercurial/hg.1.html#copy"></a>):
+            mark files as copied for the next commit.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/CopyGuiCommand">CopyGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "copy" command:
+            Copy dialog.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/CustomCommand">CustomCommand</a></td>
+									<td>
+            This class implements execution of a custom Mercurial command.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/DatamineGuiCommand">DatamineGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "datamine" command:
+            Search the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Attributes/DateTimeArgumentAttribute">Date<wbr>Time<wbr>Argument<wbr>Attribute</a></td>
+									<td>
+            This attribute can be applied to nullable properties in option classes,
+            to specify the option to pass to the executable in case
+            of a <code class="cs">null</code> value, or the option to pass before the property
+            value itself.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/DebugObserver">DebugObserver</a></td>
+									<td>
+            This class implements <code class="cs"><a href="/Cake.Hg/api/Mercurial/IMercurialCommandObserver">IMercurialCommandObserver</a></code>
+            by simply writing everything to debug output through
+            <code class="cs">System.Diagnostics.Debug.WriteLine(System.String)</code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/DiffCommand">DiffCommand</a></td>
+									<td>
+            This class implements the "hg diff" command (<a href="http://www.selenic.com/mercurial/hg.1.html#diff"></a>):
+            diff repository (or selected files).
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/DiffGuiCommand">DiffGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "vdiff" command:
+            Launch the visual diff tool.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/DragCopyGuiCommand">DragCopyGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "drag_copy" command:
+            Copy the selected files to the desired directory.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/DragCopyMoveGuiCommandBase_1">Drag<wbr>Copy<wbr>Move<wbr>Gui<wbr>Command<wbr>Base<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This is the base class for <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/DragCopyGuiCommand">DragCopyGuiCommand</a></code> and <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/DragMoveGuiCommand">DragMoveGuiCommand</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/DragMoveGuiCommand">DragMoveGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "drag_move" command:
+            Move the selected files to the desired directory.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/EditIgnoreFiltersGuiCommand">Edit<wbr>Ignore<wbr>Filters<wbr>Gui<wbr>Command</a></td>
+									<td>
+            Implements the TortoiseHg "hgignore" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/ignore.html#from-command-line"></a>):
+            Show the TortoiseHg dialog for editing ignore filters.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/EmailGuiCommand">EmailGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "email" command:
+            Send changesets by email.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Attributes/EnumArgumentAttribute">Enum<wbr>Argument<wbr>Attribute</a></td>
+									<td>
+            This attribute can be applied to enum-properties in option classes,
+            to specify the arguments to pass to the executable in case of
+            each possible enum value for the property. Note that usage of any enum values that
+            don't have a corresponding <code class="cs"><a href="/Cake.Hg/api/Mercurial.Attributes/EnumArgumentAttribute">EnumArgumentAttribute</a></code> will be ignored.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/FilesBasedGuiCommandBase_1">Files<wbr>Based<wbr>Gui<wbr>Command<wbr>Base<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This is the base class for option classes for various commands for
+            the TortoiseHg client, that have a Files collection property
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/FileStatus">FileStatus</a></td>
+									<td>
+            Contains the status of a single modified file in the working folder.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ForgetCommand">ForgetCommand</a></td>
+									<td>
+            This class implements the "hg forget" command (<a href="http://www.selenic.com/mercurial/hg.1.html#forget"></a>):
+            forget the specified files on the next commit.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/ForgetGuiCommand">ForgetGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "forget" command:
+            Show file status viewer in "forget mode".
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/GuessGuiCommand">GuessGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "guess" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/guess.html#from-command-line"></a>):
+            Guess previous renames or copies.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient">GuiClient</a></td>
+									<td>
+            This class encapsulates the Mercurial TortoiseHg client application.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/GuiClientRequirementAttribute">Gui<wbr>Client<wbr>Requirement<wbr>Attribute</a></td>
+									<td>
+            This attribute can be applied to classes descending from <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/GuiCommandBase_1">GuiCommandBase&lt;T&gt;</a></code>
+            to specify the requirements for the installed client for the command to be available.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/GuiCommandBase_1">GuiCommandBase<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This is the base class for option classes for various commands for
+            the TortoiseHg client.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/GuiVersionCommand">GuiVersionCommand</a></td>
+									<td>
+            Implements the TortoiseHg "version" command:
+            Retrieve the version text from the TortoiseHg client.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/HeadsCommand">HeadsCommand</a></td>
+									<td>
+            This class implements the "hg heads" command (<a href="http://www.selenic.com/mercurial/hg.1.html#heads"></a>):
+            show current repository heads or show branch heads.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/HelpCommand">HelpCommand</a></td>
+									<td>
+            This class implements the "hg help" command (<a href="http://www.selenic.com/mercurial/hg.1.html#help"></a>):
+            show help for a given topic or a help overview.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/IdentifyCommand">IdentifyCommand</a></td>
+									<td>
+            This class implements the "hg identify" command (<a href="http://www.selenic.com/mercurial/hg.1.html#identify"></a>):
+            identify the working copy or specified revision.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/ImportGuiCommand">ImportGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "import" command:
+            Import patches to repository/patch queue.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/IncludeExcludeCommandBase_1">Include<wbr>Exclude<wbr>Command<wbr>Base<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This is the base class for option classes for various commands for
+            the Mercurial client that supports the "--include PATTERN" and
+            "--exclude PATTERN" options.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/IncomingCommand">IncomingCommand</a></td>
+									<td>
+            This class implements the "hg incoming" command (<a href="http://www.selenic.com/mercurial/hg.1.html#incoming"></a>):
+            show new changesets found in source.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/InitCommand">InitCommand</a></td>
+									<td>
+            This class implements the "hg init" command (<a href="http://www.selenic.com/mercurial/hg.1.html#init"></a>):
+            create a new repository in the given directory.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/InitGuiCommand">InitGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "init" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/init.html#from-command-line"></a>):
+            Initialize a new repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ListFile">ListFile</a></td>
+									<td>
+            This class can be used internally by the other command classes, to provide support for a list of files
+            written out to a temporary file, instead of passing them all on the command line.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/LogCommand">LogCommand</a></td>
+									<td>
+            This class implements the "hg log" command (<a href="http://www.selenic.com/mercurial/hg.1.html#log"></a>):
+            show revision history of entire repository or files.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.XmlSerializationTypes/LogEntryAuthorNode">LogEntryAuthorNode</a></td>
+									<td>
+            This class encapsulates a &lt;author...&gt; node in the log output.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.XmlSerializationTypes/LogEntryCopyNode">LogEntryCopyNode</a></td>
+									<td>
+            This class encapsulates a &lt;copy...&gt; node in the log output.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.XmlSerializationTypes/LogEntryNode">LogEntryNode</a></td>
+									<td>
+            This class encapsulates a &lt;logentry...&gt; node in the log output.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.XmlSerializationTypes/LogEntryParentNode">LogEntryParentNode</a></td>
+									<td>
+            This class encapsulates a &lt;parent...&gt; node in the log output.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.XmlSerializationTypes/LogEntryPathNode">LogEntryPathNode</a></td>
+									<td>
+            This class encapsulates a &lt;path...&gt; node in the log output.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.XmlSerializationTypes/LogEntryTagNode">LogEntryTagNode</a></td>
+									<td>
+            This class encapsulates a &lt;tag&gt;...&lt;/tag&gt; node in the log output.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/LogGuiCommand">LogGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "log" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/workbench.html#from-command-line"></a>):
+            Repository explorer (changelog viewer.)
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.XmlSerializationTypes/LogNode">LogNode</a></td>
+									<td>
+            This class encapsulates a &lt;log...&gt; node in the log output.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ManifestCommand">ManifestCommand</a></td>
+									<td>
+            This class implements the "hg manifest" command (<a href="http://www.selenic.com/mercurial/hg.1.html#manifest"></a>):
+            output the current or given revision of the project manifest.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/ManifestGuiCommand">ManifestGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "manifest" command:
+            Display the current or given revision of the project manifest.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialChangeGroupHook">Mercurial<wbr>Change<wbr>Group<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "changegroup" hook:
+            This is run after a group of changesets has been brought into the repository from elsewhere.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MercurialCommandBase_1">MercurialCommandBase<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This is the base class for option classes for various commands for
+            the Mercurial client.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialCommandHookArgumentsCollection">Mercurial<wbr>Command<wbr>Hook<wbr>Arguments<wbr>Collection</a></td>
+									<td>
+            This class is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreCommandHook">MercurialPreCommandHook</a></code> and <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPostCommandHook">MercurialPostCommandHook</a></code> to
+            hold the positional arguments to the Mercurial command.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialCommandHookDataStructureBase">Mercurial<wbr>Command<wbr>Hook<wbr>Data<wbr>Structure<wbr>Base</a></td>
+									<td>
+            This is the base class for <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialCommandHookDictionary">MercurialCommandHookDictionary</a></code>
+            and <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialCommandHookPatternCollection">MercurialCommandHookPatternCollection</a></code>
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialCommandHookDictionary">Mercurial<wbr>Command<wbr>Hook<wbr>Dictionary</a></td>
+									<td>
+            This class is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreCommandHook">MercurialPreCommandHook</a></code> and <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPostCommandHook">MercurialPostCommandHook</a></code> to
+            hold the options to the Mercurial command.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialCommandHookPatternCollection">Mercurial<wbr>Command<wbr>Hook<wbr>Pattern<wbr>Collection</a></td>
+									<td>
+            This class is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreCommandHook">MercurialPreCommandHook</a></code> and <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPostCommandHook">MercurialPostCommandHook</a></code> to
+            hold the options to the Mercurial command.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialCommitHook">MercurialCommitHook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "commit" hook:
+            This is run after a new changeset has been created in the local repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">Mercurial<wbr>Controlling<wbr>Hook<wbr>Base</a></td>
+									<td>
+            This is the base class for Mercurial hook type implementations that are of type "controlling", that is
+            that they can determine whether the Mercurial command being executed is allowed to proceed or not.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MercurialException">MercurialException</a></td>
+									<td>
+            Represents errors related to Mercurial.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MercurialExecutionException">Mercurial<wbr>Execution<wbr>Exception</a></td>
+									<td>
+            Represents errors related to Mercurial.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></td>
+									<td>
+            This is the base class for Mercurial hook type implementations.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialIncomingHook">Mercurial<wbr>Incoming<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "incoming" hook:
+            This is run once for each new changeset that is brought into the repository from elsewhere.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MercurialInstallationException">Mercurial<wbr>Installation<wbr>Exception</a></td>
+									<td>
+            Represents error related to the installation (or lack thereof) of
+            Mercurial on the machine.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialListKeysHook">Mercurial<wbr>List<wbr>Keys<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "listkeys" hook:
+            This is run after listing pushkeys (like bookmarks) in the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MercurialMissingException">Mercurial<wbr>Missing<wbr>Exception</a></td>
+									<td>
+            Represents the error that Mercurial is not installed, or can't
+            be located.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialOutgoingHook">Mercurial<wbr>Outgoing<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "outgoing" hook:
+            This is run after sending changes from local repository to another.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPostCommandHook">Mercurial<wbr>Post<wbr>Command<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "post-command" hook:
+            This is run after the command itself has finished executing.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreChangegroupHook">Mercurial<wbr>Pre<wbr>Changegroup<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "prechangegroup" hook:
+            This is run before a changegroup is added via push, pull, or bundle.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreCommandHook">Mercurial<wbr>Pre<wbr>Command<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "pre-command" hook:
+            This is run before the command itself has started executing.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreCommitHook">Mercurial<wbr>Pre<wbr>Commit<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "precommit" hook:
+            This is run before starting a commit (note, the commit command has started executing, and can have addes files, etc.
+            See the MercurialPreCommitCommandHook for a way to intercept the entire commit command.)
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreListKeysHook">Mercurial<wbr>Pre<wbr>List<wbr>Keys<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "prelistkeys" hook:
+            This is run before listing pushkeys (like bookmarks) in the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreOutgoingHook">Mercurial<wbr>Pre<wbr>Outgoing<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "preoutgoing" hook:
+            This is run before collecting changes to send from the local repository to another.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPrePushKeyHook">Mercurial<wbr>Pre<wbr>Push<wbr>Key<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "prepushkey" hook:
+            This is run before a pushkey (like a bookmark) is added to the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreTagHook">MercurialPreTagHook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "pretag" hook:
+            This is run before creating a tag.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreTransactionChangegroupHook">Mercurial<wbr>Pre<wbr>Transaction<wbr>Changegroup<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "pretxnchangegroup" hook:
+            This is run after a changegroup has been added via push, pull, or unbundle, but before the transaction has
+            been committed.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreTransactionCommitHook">Mercurial<wbr>Pre<wbr>Transaction<wbr>Commit<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "pretxncommit" hook:
+            This is run after a changeset has been created but the transaction not yet committed.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPreUpdateHook">Mercurial<wbr>Pre<wbr>Update<wbr>Hook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialControllingHookBase">MercurialControllingHookBase</a></code> descendant implements the
+            code necessary to handle the "preupdate" hook:
+            This is run before updating the working directory.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialPushKeyHook">MercurialPushKeyHook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "pushkey" hook:
+            This is run after a pushkey (like a bookmark) has been added to the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MercurialResultParsingException">Mercurial<wbr>Result<wbr>Parsing<wbr>Exception</a></td>
+									<td>
+            Represents a problem with the results returned from executing the Mercurial command, in the sense
+            that the output text did not match any known format that was expected.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialTagHook">MercurialTagHook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "tag" hook:
+            This is run after a tag has been created.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MercurialTimeoutException">Mercurial<wbr>Timeout<wbr>Exception</a></td>
+									<td>
+            This exception denotes that the Mercurial command line client executable
+            did not finish within the allotted time. This could mean that the
+            operation just takes more time, but could also mean that the client is
+            waiting for input (unlikely.)
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialUpdateHook">MercurialUpdateHook</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Hooks/MercurialHookBase">MercurialHookBase</a></code> descendant implements the
+            code necessary to handle the "update" hook:
+            This is run after updating the working directory.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Versions/MercurialVersion16">MercurialVersion16</a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial.Versions/MercurialVersionBase">MercurialVersionBase</a></code> implements version-specific methods for
+            Mercurial 1.6.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Versions/MercurialVersionAttribute">Mercurial<wbr>Version<wbr>Attribute</a></td>
+									<td>
+            This attribute can be applied to <code class="cs"><a href="/Cake.Hg/api/Mercurial.Versions/MercurialVersionBase">MercurialVersionBase</a></code> descendants
+            to specify which version(s) they apply to.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Versions/MercurialVersionBase">MercurialVersionBase</a></td>
+									<td>
+            This class, and its descendants implements version-specific features of Mercurial.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Versions/MercurialVersionPre18">Mercurial<wbr>Version<wbr>Pre18</a></td>
+									<td>
+            This base class handles Mercurial &lt; 1.8.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeCommand">MergeCommand</a></td>
+									<td>
+            This class implements the "hg merge" command (<a href="http://www.selenic.com/mercurial/hg.1.html#merge"></a>):
+            merge working directory with another revision.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeConflict">MergeConflict</a></td>
+									<td>
+            This class contains information about a single file that had a merge conflict during the last merge.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/MergeGuiCommand">MergeGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "merge" command:
+            Open the merge tool.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeJob">MergeJob</a></td>
+									<td>
+            This helper class is used to control a merge, providing help and data structures for the job.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeJobConflict">MergeJobConflict</a></td>
+									<td>
+            This class encapsulates a single file as part of a <code class="cs"><a href="/Cake.Hg/api/Mercurial/MergeJobConflict/8A38D7D2">MergeJob</a></code>;
+            basically a file that had a merge conflict when the merge job started.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeTools">MergeTools</a></td>
+									<td>
+            This class holds string constants with proper .NET identifiers for the built-in known
+            merge tools.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MoveCommand">MoveCommand</a></td>
+									<td>
+            This class implements the "hg move" command (<a href="http://www.selenic.com/mercurial/hg.1.html#move"></a>):
+            move files; equivalent of copy + remove.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/MoveCopyRenameGuiCommandBase_1">Move<wbr>Copy<wbr>Rename<wbr>Gui<wbr>Command<wbr>Base<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This is the base class for <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/MoveGuiCommand">MoveGuiCommand</a></code>, <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/CopyGuiCommand">CopyGuiCommand</a></code> and <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/RenameGuiCommand">RenameGuiCommand</a></code>:
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/MoveGuiCommand">MoveGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "mv" command:
+            Move dialog.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MoveRenameCommandBase_1">Move<wbr>Rename<wbr>Command<wbr>Base<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This class serves as a base class for the <code class="cs"><a href="/Cake.Hg/api/Mercurial/MoveCommand">MoveCommand</a></code> and <code class="cs"><a href="/Cake.Hg/api/Mercurial/RenameCommand">RenameCommand</a></code> classes.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/MPatchGuiCommand">MPatchGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "mpatch" command:
+            Attempt to resolve conflicts in a .rej file.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/NamedRevision">NamedRevision</a></td>
+									<td>
+            This class is the base class for named revisions, like tags and bookmarks.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/NoChangesFoundMercurialExecutionException">No<wbr>Changes<wbr>Found<wbr>Mercurial<wbr>Execution<wbr>Exception</a></td>
+									<td>
+            Represents errors related to Mercurial.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Attributes/NullableArgumentAttribute">Nullable<wbr>Argument<wbr>Attribute</a></td>
+									<td>
+            This attribute can be applied to nullable properties in option classes,
+            to specify the option to pass to the executable in case
+            of a <code class="cs">null</code> value, or the option to pass before the property
+            value itself.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/OutgoingCommand">OutgoingCommand</a></td>
+									<td>
+            This class implements the "hg outgoing" command (<a href="http://www.selenic.com/mercurial/hg.1.html#outgoing"></a>):
+            show changesets not found in the destination.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ParentsCommand">ParentsCommand</a></td>
+									<td>
+            This class implements the "hg parents" command (<a href="http://www.selenic.com/mercurial/hg.1.html#parents"></a>):
+            show the parents of the working directory or revision.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/PathsCommand">PathsCommand</a></td>
+									<td>
+            This class implements the "hg paths" command (<a href="http://www.selenic.com/mercurial/hg.1.html#paths"></a>):
+            show aliases for remote repositories.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/PullCommand">PullCommand</a></td>
+									<td>
+            This class implements the "hg pull" command (<a href="http://www.selenic.com/mercurial/hg.1.html#pull"></a>):
+            pull changes from the specified source.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/PurgeGuiCommand">PurgeGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "purge" command:
+            Purge unknown and/or ignore files from repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/PushCommand">PushCommand</a></td>
+									<td>
+            This class implements the "hg push" command (<a href="http://www.selenic.com/mercurial/hg.1.html#push"></a>):
+            push changes to the specified destination.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.Queues/QueueCommandBaseExtensions">Queue<wbr>Command<wbr>Base<wbr>Extensions</a></td>
+									<td>
+            This class adds extension methods to the <code class="cs"><a href="/Cake.Hg/api/Mercurial/MercurialCommandBase_1">MercurialCommandBase&lt;T&gt;</a></code> class, for
+            the Mercurial Queues extension.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.Queues/QueueExtension">QueueExtension</a></td>
+									<td>
+            This class contains logic for the Mercurial Queues extension.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/QueueGuiCommand">QueueGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "mq" command:
+            Mercurial queue tool.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/QueueManagerGuiCommand">Queue<wbr>Manager<wbr>Gui<wbr>Command</a></td>
+									<td>
+            Implements the TortoiseHg "qqueue" command:
+            Manage multiple MQ patch queues.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/QueueReorderGuiCommand">Queue<wbr>Reorder<wbr>Gui<wbr>Command</a></td>
+									<td>
+            Implements the TortoiseHg "qreorder" command:
+            Reorder unapplied MQ patches.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/RebaseGuiCommand">RebaseGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "rebase" command:
+            Rebase changesets.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RecoverCommand">RecoverCommand</a></td>
+									<td>
+            This class implements the "hg recover" command (<a href="http://www.selenic.com/mercurial/hg.1.html#recover"></a>):
+            Recover from an interrupted commit or pull.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/RecoveryGuiCommand">RecoveryGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "recovery" command:
+            Show the dialog for attempting to recover or rollback.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/RejectsGuiCommand">RejectsGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "rejects" command:
+            Manually resolve rejected patch chunks.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RemoteInitCommand">RemoteInitCommand</a></td>
+									<td>
+            This class implements the "hg init" command (<a href="http://www.selenic.com/mercurial/hg.1.html#init"></a>):
+            create a new repository at the given remote location.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RemoteRepositoryPath">RemoteRepositoryPath</a></td>
+									<td>
+            This class encapsulates information about the path to a remote repository related to the current
+            repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RemoveCommand">RemoveCommand</a></td>
+									<td>
+            This class implements the "hg remove" command (<a href="http://www.selenic.com/mercurial/hg.1.html#remove"></a>):
+            remove the specified files on the next commit.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/RemoveGuiCommand">RemoveGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "remove" command:
+            Open the file status viewer in revert mode.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RenameCommand">RenameCommand</a></td>
+									<td>
+            This class implements the "hg rename" command (<a href="http://www.selenic.com/mercurial/hg.1.html#rename"></a>):
+            rename files; equivalent of copy + remove.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/RenameGuiCommand">RenameGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "rename" command:
+            Rename dialog (also copies or moves.)
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Attributes/RepeatableArgumentAttribute">Repeatable<wbr>Argument<wbr>Attribute</a></td>
+									<td>
+            This attribute can be applied to collection-properties in option classes,
+            to specify the option to prefix each element in the collection with,
+            when building the command line arguments for the Mercurial executable.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/RepoConfigGuiCommand">RepoConfigGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "repoconfig" command:
+            Show the repository configuration editor.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/Repository">Repository</a></td>
+									<td>
+            This class encapsulates a repository on disk.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RepositorySummary">RepositorySummary</a></td>
+									<td>
+            This class contains a summary of the repository state, as returned by the
+            <code class="cs"><a href="/Cake.Hg/api/Mercurial/SummaryCommand">SummaryCommand</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ResolveCommand">ResolveCommand</a></td>
+									<td>
+            This class implements the "hg resolve" command (<a href="http://www.selenic.com/mercurial/hg.1.html#resolve"></a>):
+            Redo merges or set/view the merge status of files.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/ResolveGuiCommand">ResolveGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "resolve" command:
+            Resolve dialog.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RevertCommand">RevertCommand</a></td>
+									<td>
+            This class implements the "hg revert" command (<a href="http://www.selenic.com/mercurial/hg.1.html#revert"></a>):
+            restore individual files or directories to an earlier state.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/RevertGuiCommand">RevertGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "revert" command:
+            Revert selected files.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RevSpec">RevSpec</a></td>
+									<td>
+            Specifies a set of revisions, typically used to extract only
+            a portion of the log, or specifying diff ranges
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/RollbackCommand">RollbackCommand</a></td>
+									<td>
+            This class implements the "hg rollback" command (<a href="http://www.selenic.com/mercurial/hg.1.html#rollback"></a>):
+            Roll back the last transaction (dangerous.)
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/SearchGuiCommand">SearchGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "search" command:
+            Grep/search dialog.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/ShellConfigGuiCommand">Shell<wbr>Config<wbr>Gui<wbr>Command</a></td>
+									<td>
+            Implements the TortoiseHg "shellconfig" command:
+            Open the Windows Explorer extension configuration editor.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/ShelveGuiCommand">ShelveGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "shelve" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/shelve.html#from-command-line"></a>):
+            Shelve/unshelve tool.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ShowConfigCommand">ShowConfigCommand</a></td>
+									<td>
+            This class implements the "hg showconfig" command (<a href="http://www.selenic.com/mercurial/hg.1.html#showconfig"></a>):
+            show combined config settings from all hgrc files.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/StatusCommand">StatusCommand</a></td>
+									<td>
+            This class implements the "hg status" command (<a href="http://www.selenic.com/mercurial/hg.1.html#status"></a>):
+            show changed files in the working directory.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/StatusGuiCommand">StatusGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "status" command:
+            Show working copy status.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/StripGuiCommand">StripGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "strip" command:
+            Strip changesets from the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/SummaryCommand">SummaryCommand</a></td>
+									<td>
+            This class implements the "hg summary" command (<a href="http://www.selenic.com/mercurial/hg.1.html#summary"></a>):
+            summarize working directory state.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/SynchronizeGuiCommand">Synchronize<wbr>Gui<wbr>Command</a></td>
+									<td>
+            Implements the TortoiseHg "synchronize" command (<a href="http://tortoisehg.bitbucket.org/manual/2.0/sync.html#from-command-line"></a>):
+            Synchronize the repository with other repositories.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/Tag">Tag</a></td>
+									<td>
+            This class encapsulates information about a single persistent tag in the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/TagCommand">TagCommand</a></td>
+									<td>
+            This class implements the "hg tag" command (<a href="http://www.selenic.com/mercurial/hg.1.html#tag"></a>):
+            add one or more tags for the current or given revision.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/TagGuiCommand">TagGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "tag" command:
+            Open the tag tool.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/TagsCommand">TagsCommand</a></td>
+									<td>
+            This class implements the "hg tags" command (<a href="http://www.selenic.com/mercurial/hg.1.html#tags"></a>):
+            list repository tags.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/TipCommand">TipCommand</a></td>
+									<td>
+            This class implements the "hg tip" command (<a href="http://www.selenic.com/mercurial/hg.1.html#tip"></a>):
+            show the tip revision.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/UnbundleCommand">UnbundleCommand</a></td>
+									<td>
+            This class implements the "hg unbundle" command (<a href="http://www.selenic.com/mercurial/hg.1.html#unbundle"></a>):
+            apply one or more changegroup files.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/UnresolvedFilesAfterUnbundleMercurialExecutionException">Unresolved<wbr>Files<wbr>After<wbr>Unbundle<wbr>Mercurial<wbr>Execution<wbr>Exception</a></td>
+									<td>
+            Represents errors related to Mercurial.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/UpdateCommand">UpdateCommand</a></td>
+									<td>
+            This class implements the "hg update" command (<a href="http://www.selenic.com/mercurial/hg.1.html#update"></a>):
+            update working directory (or switch revisions.)
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/UpdateGuiCommand">UpdateGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "update" command:
+            Update/checkout changeset to working directory.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/UserConfigGuiCommand">UserConfigGuiCommand</a></td>
+									<td>
+            Implements the TortoiseHg "userconfig" command:
+            Open the Windows Explorer extension configuration editor.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/VerifyCommand">VerifyCommand</a></td>
+									<td>
+            This class implements the "hg verify" command (<a href="http://www.selenic.com/mercurial/hg.1.html#verify"></a>):
+            verify the integrity of the repository.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/VersionCommand">VersionCommand</a></td>
+									<td>
+            This class implements the "hg version" command (<a href="http://www.selenic.com/mercurial/hg.1.html#version"></a>):
+            output version and copyright information.
+            </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+			<h1 id="EnumTypes">Enum Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Enum</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ArchiveType">ArchiveType</a></td>
+									<td>
+            The type of archive to produce using the <code class="cs"><a href="/Cake.Hg/api/Mercurial/ArchiveCommand">ArchiveCommand</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BisectState">BisectState</a></td>
+									<td>
+            This enum is used by the <code class="cs"><a href="/Cake.Hg/api/Mercurial/BisectCommand">BisectCommand</a></code>.<code class="cs"><a href="/Cake.Hg/api/Mercurial/BisectCommand/326D3A5F">State</a></code>
+            property, to specify how to continue with the bisect command.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/BookmarkAction">BookmarkAction</a></td>
+									<td>
+            This enum is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial/BookmarkCommand">BookmarkCommand</a></code>.<code class="cs"><a href="/Cake.Hg/api/Mercurial/BookmarkCommand/97556248">Action</a></code>
+            to specify which action to take.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ChangesetPathActionType">Changeset<wbr>Path<wbr>Action<wbr>Type</a></td>
+									<td>
+            This enum is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial/ChangesetPathAction">ChangesetPathAction</a></code> to specify the
+            type of action that was performed on the path.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Extensions.Churn/ChurnUnit">ChurnUnit</a></td>
+									<td>
+            This enum is used by the <code class="cs"><a href="/Cake.Hg/api/Mercurial.Extensions.Churn/ChurnCommand">ChurnCommand</a></code> class to specify what unit of measurement we're going to report in.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/DiffIgnores">DiffIgnores</a></td>
+									<td>
+            This enum is used by the <code class="cs"><a href="/Cake.Hg/api/Mercurial/DiffCommand">DiffCommand</a></code>.<code class="cs"><a href="/Cake.Hg/api/Mercurial/DiffCommand/8329D05C">Ignore</a></code> property
+            to specify whether to ignore certain types of differences that may be insignificant in meaning.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/FileState">FileState</a></td>
+									<td>
+            This enum contains possible file states for files reported by the
+            <code class="cs"><a href="/Cake.Hg/api/Mercurial/Repository/2D994F7D">Status(StatusCommand)</a></code> command through the
+            <code class="cs"><a href="/Cake.Hg/api/Mercurial/FileStatus">FileStatus</a></code> object.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/FileStatusIncludes">FileStatusIncludes</a></td>
+									<td>
+            This enum is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial/StatusCommand/C06F7958">Include</a></code> to specify what kind of
+            status codes to include.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/GuiClientType">GuiClientType</a></td>
+									<td>
+            This enum is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial.Gui/GuiClient">GuiClient</a></code> to specify which client to use.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MercurialCompressionType">Mercurial<wbr>Compression<wbr>Type</a></td>
+									<td>
+            This enum is used to specify the type of compression to apply to files, typically
+            bundle files produced with the <code class="cs"><a href="/Cake.Hg/api/Mercurial/BundleCommand">BundleCommand</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeConflictState">MergeConflictState</a></td>
+									<td>
+            This enum is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial/MergeConflict">MergeConflict</a></code> to signal the current (as of last executionof the
+            <code class="cs"><a href="/Cake.Hg/api/Mercurial/ResolveCommand">ResolveCommand</a></code>) state of a file that had a merge conflict from the last merge.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeJobConflictSubFile">Merge<wbr>Job<wbr>Conflict<wbr>Sub<wbr>File</a></td>
+									<td>
+            This enum is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial/MergeJobConflict">MergeJobConflict</a></code> to get paths to and contents of the
+            sub-files for a merge conflict.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeJobState">MergeJobState</a></td>
+									<td>
+            This enum is used by a <code class="cs"><a href="/Cake.Hg/api/Mercurial/MergeJob">MergeJob</a></code> to indicate its current state.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/MergeResult">MergeResult</a></td>
+									<td>
+            This enum is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial/MergeCommand">MergeCommand</a></code> to signal the result of a merge command.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ResolveAction">ResolveAction</a></td>
+									<td>
+            This enum is used by <code class="cs"><a href="/Cake.Hg/api/Mercurial/ResolveCommand">ResolveCommand</a></code>.<code class="cs"><a href="/Cake.Hg/api/Mercurial/ResolveCommand/8A65F24D">Action</a></code> to specify
+            which action to take on the files selected.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/TagAction">TagAction</a></td>
+									<td>
+            This enum is used to specify which action to take for a tag, when using the
+            <code class="cs"><a href="/Cake.Hg/api/Mercurial/TagCommand">TagCommand</a></code>.
+            </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+			<h1 id="InterfaceTypes">Interface Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Interface</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.Hg/api/Mercurial/IAsyncResult_1">IAsyncResult<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            This interface will be returned from <code class="cs"><a href="/Cake.Hg/api/Mercurial/Repository/2F8E147E">BeginExecute&lt;TResult&gt;(IMercurialCommand&lt;TResult&gt;, AsyncCallback)</a></code> in order to
+            produce a type-safe asynchronous execution.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/ICommand">ICommand</a></td>
+									<td>
+            This interface must be implemented by all classes that implement the command
+            pattern for executing Mercurial and TortoiseHg commands.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Gui/IGuiCommand">IGuiCommand</a></td>
+									<td>
+            This interface must be implemented by all classes that implement the command
+            pattern for executing TortoiseHg commands.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/IMercurialCommand">IMercurialCommand</a></td>
+									<td>
+            This interface must be implemented by all classes that implement the command
+            pattern for executing Mercurial commands.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/IMercurialCommand_1">IMercurialCommand<wbr>&lt;TResult&gt;<wbr></a></td>
+									<td>
+            This <code class="cs"><a href="/Cake.Hg/api/Mercurial/IMercurialCommand">IMercurialCommand</a></code> descendant interface must be implemented by
+            all classes that implement the command pattern for executing Mercurial commands,
+            and that returns data back to the programmer.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial/IMercurialCommandObserver">I<wbr>Mercurial<wbr>Command<wbr>Observer</a></td>
+									<td>
+            This interface must be implemented by an object that will act as an observer
+            of events related to Mercurial command execution.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Hg/api/Mercurial.Hooks/IMercurialControllingHook">I<wbr>Mercurial<wbr>Controlling<wbr>Hook</a></td>
+									<td>
+            This interface must be implementing by all controlling hooks.
+            </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
