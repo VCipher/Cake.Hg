@@ -19,5 +19,5 @@ using System.Runtime.InteropServices;
 [assembly: Guid("8E7F175A-9805-4FB2-8708-C358FF9F5CB2")]
 
 // Cake build configuration
-[assembly: CakeNamespaceImport(nameof(Mercurial))]
-[assembly: CakeNamespaceImport(nameof(Cake.Hg))]
+[assembly: CakeNamespaceImport("Mercurial")]
+[assembly: CakeNamespaceImport("Cake.Hg")]
