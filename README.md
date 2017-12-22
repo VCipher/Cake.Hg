@@ -7,21 +7,6 @@ Cake AddIn that extends Cake with Mercurial features using Mercurial.Net
 |-----------------------------|--------------|---------------------------------------------------------------------------------------------------------------------------|
 | AppVeyor                    | Windows      | [![Build status](https://img.shields.io/appveyor/ci/cakecontrib/cake-hg/master.svg)](https://ci.appveyor.com/project/cakecontrib/cake-hg/branch/master) |
 
-# Usage
+# Documentation
 
-```c#
-#addin "Cake.Hg"
-
-var target = Argument("target", "Default");
-
-Task("Hg-CreateTag")
-    .Does(() => 
-    {
-        HgTag("./", "0.0.1");
-    });
-
-Task("Default")
-    .IsDependentOn("Hg-CreateTag");
-    
-RunTarget(target);
-```
+https://cake-contrib.github.io/Cake.Hg/

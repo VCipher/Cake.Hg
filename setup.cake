@@ -9,7 +9,8 @@ BuildParameters.SetParameters(context: Context,
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.Hg",
                             appVeyorAccountName: "cakecontrib",
-                            solutionFilePath: "./src/Cake.Hg.sln");
+                            solutionFilePath: "./src/Cake.Hg.sln",
+                            wyamSourceFiles: "../../src/**/{!bin,!obj,!packages,!*Tests,}/**/*.cs");
 
 BuildParameters.PrintParameters(Context);
 

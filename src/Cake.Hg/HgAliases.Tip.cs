@@ -1,42 +1,34 @@
-﻿using Cake.Core;
+using System;
+using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
 using Mercurial;
-using System;
+
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable UnusedMember.Global
 
-namespace Cake.Hg.Aliases
+namespace Cake.Hg
 {
-    /// <summary>
-    /// Contains functionality for working with Mercurial.
-    /// <code>
-    ///     #addin Cake.Hg
-    /// </code>
-    /// </summary>
-    [CakeAliasCategory("Hg")]
     public static partial class HgAliases
     {
         /// <summary>
-        /// Return mercurial repository. 
+        /// Get the tip revision.
+        /// </summary>
         /// <example>
         /// <code>
-        ///     var repo = Hg("./");
+        ///     var changeset = HgTip("./");
         /// </code>
         /// </example>
-        /// </summary>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
-        /// <returns>Mercurial repository</returns>
         [CakeMethodAlias]
-        [CakeAliasCategory("Hg")]
-        public static Repository Hg(this ICakeContext context, DirectoryPath repositoryPath)
+        [CakeAliasCategory("Tip")]
+        public static Changeset HgTip(this ICakeContext context, DirectoryPath repositoryPath)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
 
-            var path = repositoryPath.MakeAbsolute(context.Environment);
-            return new Repository(path.FullPath);
+            return context.Hg(repositoryPath).Tip();
         }
     }
 }

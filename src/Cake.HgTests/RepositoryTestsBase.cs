@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 using Mercurial;
 using NUnit.Framework;
-using System.Reflection;
 
 namespace Cake.HgTests
 {
@@ -47,7 +47,7 @@ namespace Cake.HgTests
         protected string GetResource(string name)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            using (var stream = assembly.GetManifestResourceStream($"Cake.HgTests.Resources.{name}"))
+            using (var stream = assembly.GetManifestResourceStream($"Cake.HgVersionTests.Resources.{name}"))
             using (var reader = new StreamReader(stream))
             {
                 return reader.ReadToEnd();

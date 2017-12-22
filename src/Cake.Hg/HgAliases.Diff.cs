@@ -1,32 +1,36 @@
-﻿using Cake.Core;
+﻿using System;
+using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
-using System;
+using Mercurial;
+
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable UnusedMember.Global
 
-namespace Cake.Hg.Aliases
+namespace Cake.Hg
 {
     public static partial class HgAliases
     {
         /// <summary>
-        /// Init mercurial repository. 
+        /// Get diff of repository.
         /// </summary>
         /// <example>
         /// <code>
-        ///     HgInit("./");
+        ///     var diff = HgDiff("./", "6b0f32157b9045a9495821db1927348250076e6b:e40ce466124109a074af6dc582c1d54db3e9cd01");
         /// </code>
         /// </example>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
+        /// <param name="revisions">Revision or revision range to view a diff</param>
         [CakeMethodAlias]
-        [CakeAliasCategory("Init")]
-        public static void HgInit(this ICakeContext context, DirectoryPath repositoryPath)
+        [CakeAliasCategory("Diff")]
+        public static string HgDiff(this ICakeContext context, DirectoryPath repositoryPath, RevSpec revisions)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
+            if (revisions == null) throw new ArgumentNullException(nameof(revisions));
 
-            context.Hg(repositoryPath).Init();
+            return context.Hg(repositoryPath).Diff(revisions);
         }
     }
 }
