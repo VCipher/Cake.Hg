@@ -250,8 +250,8 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.Hg/api/Mercurial.Gui/MoveGuiCommand">MoveGuiCommand</a></li>								
 											<li><a href="/Cake.Hg/api/Mercurial.Gui/RenameGuiCommand">RenameGuiCommand</a></li>								
+											<li><a href="/Cake.Hg/api/Mercurial.Gui/MoveGuiCommand">MoveGuiCommand</a></li>								
 											<li><a href="/Cake.Hg/api/Mercurial.Gui/CopyGuiCommand">CopyGuiCommand</a></li>								
 									</ul>
 								</dd>			
@@ -272,10 +272,10 @@
 	click Interface1 "/Cake.Hg/api/Mercurial/ICommand"
 	Type["MoveCopyRenameGuiCommandBase&lt;T&gt;"]
 class Type type-node
-	Type--&gt;Derived0["MoveGuiCommand"]
-	click Derived0 "/Cake.Hg/api/Mercurial.Gui/MoveGuiCommand"
-	Type--&gt;Derived1["RenameGuiCommand"]
-	click Derived1 "/Cake.Hg/api/Mercurial.Gui/RenameGuiCommand"
+	Type--&gt;Derived0["RenameGuiCommand"]
+	click Derived0 "/Cake.Hg/api/Mercurial.Gui/RenameGuiCommand"
+	Type--&gt;Derived1["MoveGuiCommand"]
+	click Derived1 "/Cake.Hg/api/Mercurial.Gui/MoveGuiCommand"
 	Type--&gt;Derived2["CopyGuiCommand"]
 	click Derived2 "/Cake.Hg/api/Mercurial.Gui/CopyGuiCommand"
 
