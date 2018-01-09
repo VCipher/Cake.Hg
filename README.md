@@ -1,5 +1,5 @@
 # Cake.Hg
-Cake AddIn that extends Cake with Mercurial features using Mercurial.Net
+Cake AddIn that extends Cake with Mercurial features using Hg.Net
 
 [![NuGet](https://img.shields.io/nuget/v/Cake.Hg.svg)](https://www.nuget.org/packages/Cake.Hg) [![MyGet](https://img.shields.io/myget/cake-contrib/vpre/Cake.Hg.svg?label=MyGet)](https://www.myget.org/feed/cake-contrib/package/nuget/Cake.Hg)
 
