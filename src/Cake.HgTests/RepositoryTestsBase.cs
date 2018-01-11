@@ -23,19 +23,16 @@ namespace Cake.HgTests
         {
             DeleteTempRepository(Repository);
         }
-        
-        protected void WriteTextAndCommit(string fileName, string content, string commitMessage = null)
+
+        protected void WriteTextAndCommit(string fileName, string contents, string commitMessage, bool addRemove)
         {
-            var path = Path.Combine(Repository.Path, fileName);
-            var fileInfo = new FileInfo(path);
-            var message = GetCommitMessage(fileInfo, commitMessage);
-
-            Directory.CreateDirectory(fileInfo.Directory.FullName);
-            File.WriteAllText(fileInfo.FullName, content);
-
-            Repository.Commit(new CommitCommand()
-                .WithMessage(message)
-                .WithAddRemove(true));
+            File.WriteAllText(Path.Combine(Repository.Path, fileName), contents);
+            Repository.Commit(
+                new CommitCommand
+                {
+                    Message = commitMessage,
+                    AddRemove = addRemove,
+                });
         }
 
         protected string ReadText(string path)

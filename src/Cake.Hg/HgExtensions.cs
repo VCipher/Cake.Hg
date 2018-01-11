@@ -18,11 +18,14 @@ namespace Cake.Hg
         public static Changeset Changeset(this Repository repository, RevSpec revision)
         {
             var id = repository.Identify(new IdentifyCommand()
-                .WithAdditionalArgument($"--rev {revision}"));
+                .WithAdditionalArgument($"--rev")
+                .WithAdditionalArgument($"{revision}"));
 
             var log = repository.Log(new LogCommand()
                 .WithRevision(id)
-                .WithAdditionalArgument("--limit 1"));
+                .WithAdditionalArgument("--limit")
+                .WithAdditionalArgument("1")
+                );
 
             return log.First();
         }
