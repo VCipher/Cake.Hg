@@ -36,9 +36,6 @@
     <Reference Include="Cake.Core, Version=0.23.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\Cake.Core.0.23.0\lib\net46\Cake.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Mercurial.Net, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Hg.Net.0.1.5\lib\net461\Mercurial.Net.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
       <HintPath>..\packages\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -64,6 +61,10 @@
     <ProjectReference Include="..\Cake.Hg\Cake.Hg.csproj">
       <Project>{8e7f175a-9805-4fb2-8708-c358ff9f5cb2}</Project>
       <Name>Cake.Hg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hg.Net\src\Mercurial.Net\Mercurial.Net.csproj">
+      <Project>{536b722b-de28-48fc-abaf-12b4b9ffb44a}</Project>
+      <Name>Mercurial.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
