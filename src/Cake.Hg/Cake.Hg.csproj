@@ -1,80 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E7F175A-9805-4FB2-8708-C358FF9F5CB2}</ProjectGuid>
-    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cake.Hg</RootNamespace>
+    <TargetFrameworks>net461</TargetFrameworks>
     <AssemblyName>Cake.Hg</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Cake.Hg.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Cake.Hg.xml</DocumentationFile>
+    <PackageId>Cake.Hg</PackageId>
+    <Authors>vCipher</Authors>
+    <Owners>vCipher,cake-contrib</Owners>
+    <Description>Cake AddIn that extends Cake with Mercurial features</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Copyright>Copyright © vCipher 2018</Copyright>
+    <PackageProjectUrl>https://github.com/cake-contrib/Cake.Hg</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.Hg</RepositoryUrl>
+    <IconUrl>https://raw.githubusercontent.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</IconUrl>
+    <PackageTags>cake hg mercurial</PackageTags>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cake.Core, Version=0.23.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Cake.Core.0.23.0\lib\net46\Cake.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Mercurial.Net, Version=0.1.5.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Hg.Net.0.1.5\lib\net461\Mercurial.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <PackageReference Include="Cake.Core" Version="0.24.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Hg.Net" Version="0.1.5" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="HgAliases.Commit.cs" />
-    <Compile Include="HgAliases.cs" />
-    <Compile Include="HgAliases.Diff.cs" />
-    <Compile Include="HgAliases.Init.cs" />
-    <Compile Include="HgAliases.Tag.cs" />
-    <Compile Include="HgAliases.Tip.cs" />
-    <Compile Include="HgExtensions.cs" />
-    <Compile Include="Namespaces.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <Compile Include="..\SolutionInfo.cs" Condition="Exists('..\SolutionInfo.cs')">
-      <Link>Properties\SolutionInfo.cs</Link>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Hg.Net\src\Mercurial.Net\Mercurial.Net.csproj">
-      <Project>{536b722b-de28-48fc-abaf-12b4b9ffb44a}</Project>
-      <Name>Mercurial.Net</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

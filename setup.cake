@@ -11,15 +11,10 @@ BuildParameters.SetParameters(context: Context,
     appVeyorAccountName: "cakecontrib",
     solutionFilePath: "./src/Cake.Hg.sln",
     shouldRunCodecov: false,
-    shouldRunDupFinder: false,
+    shouldRunDotNetCorePack: true,
     wyamSourceFiles: "../../src/**/{!bin,!obj,!packages,!*Tests,}/**/*.cs");
 
 BuildParameters.PrintParameters(Context);
+ToolSettings.SetToolSettings(context: Context);
 
-ToolSettings.SetToolSettings(context: Context,
-    dupFinderExcludePattern: new string[] {
-        BuildParameters.RootDirectoryPath + "/src/Cake.HgTests/**/*.cs",
-        BuildParameters.RootDirectoryPath + "/src/Cake.Hg/**/*.AssemblyInfo.cs"
-    });
-
-Build.Run();
+Build.RunDotNetCore();
