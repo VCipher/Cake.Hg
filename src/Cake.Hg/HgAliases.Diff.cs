@@ -29,8 +29,11 @@ namespace Cake.Hg
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
             if (revisions == null) throw new ArgumentNullException(nameof(revisions));
-
-            return context.Hg(repositoryPath).Diff(revisions);
+            
+            using (var repository = context.Hg(repositoryPath))
+            {
+                return repository.Diff(revisions);
+            }
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
@@ -10,58 +9,61 @@ using Mercurial;
 
 namespace Cake.Hg
 {
-    public static partial class HgAliases
+    public partial class HgAliases
     {
         /// <summary>
-        /// Apply a symbolic identifier for a changeset [tag]. 
+        /// Push local changes to remote repository. 
         /// </summary>
         /// <example>
         /// <code>
-        ///     HgTag("./", "0.0.1");
+        ///     HgPush("./");
         /// </code>
         /// </example>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
-        /// <param name="tagName">Tag name</param>
         [CakeMethodAlias]
-        [CakeAliasCategory("Tag")]
-        public static void HgTag(this ICakeContext context, DirectoryPath repositoryPath, string tagName)
+        [CakeAliasCategory("Push")]
+        public static void HgPush(this ICakeContext context, DirectoryPath repositoryPath)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
-            if (tagName == null) throw new ArgumentNullException(nameof(tagName));
 
             using (var repository = context.Hg(repositoryPath))
             {
-                repository.Tag(tagName);
+                repository.Push();
             }
         }
         
         /// <summary>
-        /// Get list of current tags. 
+        /// Push local changes to remote repository. 
         /// </summary>
         /// <example>
         /// <code>
-        ///     var tags = HgTags("./");
-        /// 
-        ///     foreach (var tag in tags)
+        ///     HgPush("./", new HgPushSettings
         ///     {
-        ///         Information("Name: {0}, Revision: {1}", tag.Name, tag.RevisionNumber);
-        ///     }
+        ///         User = "user",
+        ///         Password = "password",
+        ///         Url = "https://bitbucket.org/mycompany/myrepository
+        ///     });
         /// </code>
         /// </example>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
+        /// <param name="settings">Push settings</param>
         [CakeMethodAlias]
-        [CakeAliasCategory("Tag")]
-        public static IEnumerable<Tag> HgTags(this ICakeContext context, DirectoryPath repositoryPath)
+        [CakeAliasCategory("Push")]
+        public static void HgPush(this ICakeContext context, DirectoryPath repositoryPath, HgPushSettings settings)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
+            if (settings == null) throw new ArgumentNullException(nameof(settings));
 
             using (var repository = context.Hg(repositoryPath))
             {
-                return repository.Tags();
+                var command = new PushCommand()
+                    .WithDestination(settings.GetAuthUrl());
+                
+                repository.Push(command);
             }
         }
     }

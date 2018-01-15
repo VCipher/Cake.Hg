@@ -1,6 +1,8 @@
 ﻿using Mercurial;
 using System.Linq;
+
 // ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedMember.Global
 
 namespace Cake.Hg
 {
@@ -24,8 +26,7 @@ namespace Cake.Hg
             var log = repository.Log(new LogCommand()
                 .WithRevision(id)
                 .WithAdditionalArgument("--limit")
-                .WithAdditionalArgument("1")
-                );
+                .WithAdditionalArgument("1"));
 
             return log.First();
         }

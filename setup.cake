@@ -12,9 +12,34 @@ BuildParameters.SetParameters(context: Context,
     solutionFilePath: "./src/Cake.Hg.sln",
     shouldRunCodecov: false,
     shouldRunDotNetCorePack: true,
+    shouldRunIntegrationTests: true,
     wyamSourceFiles: "../../src/**/{!bin,!obj,!packages,!*Tests,}/**/*.cs");
 
 BuildParameters.PrintParameters(Context);
 ToolSettings.SetToolSettings(context: Context);
+
+Task("Unzip-Addin")
+    .IsDependentOn("Package")
+    .Does(() =>
+{
+    var addin = BuildParameters.Title;
+    var semVersion = BuildParameters.Version.SemVersion;
+    var nugetRoot = BuildParameters.Paths.Directories.NuGetPackages;
+    var package = $"{nugetRoot}/{addin}.{semVersion}.nupkg";
+    var addinDir = MakeAbsolute(Directory($"./tools/Addins/{addin}/{addin}"));
+    
+    if (DirectoryExists(addinDir))
+    {
+        DeleteDirectory(addinDir, new DeleteDirectorySettings {
+            Recursive = true,
+            Force = true
+        });
+    }
+
+    Unzip(package, addinDir);
+});
+
+BuildParameters.Tasks.IntegrationTestTask
+    .IsDependentOn("Unzip-Addin");
 
 Build.RunDotNetCore();

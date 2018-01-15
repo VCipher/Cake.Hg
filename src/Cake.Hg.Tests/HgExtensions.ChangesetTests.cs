@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
-using Cake.Hg;
 
-namespace Cake.HgTests
+namespace Cake.Hg.Tests
 {
     [TestFixture, Parallelizable(ParallelScope.Self)]
     class HgExtensionsTests: RepositoryTestsBase

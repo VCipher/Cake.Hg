@@ -17,10 +17,17 @@ namespace Cake.Hg
         /// <example>
         /// <code>
         ///     var changeset = HgTip("./");
+        /// 
+        ///     Information("[{0}] - {1} by {2} ({3})",
+        ///         changeset.Branch,
+        ///         changeset.Hash,
+        ///         changeset.AuthorName,
+        ///         changeset.AuthorEmailAddress);
         /// </code>
         /// </example>
         /// <param name="context">Cake context</param>
         /// <param name="repositoryPath">Path to repository</param>
+        /// <returns>Returns information about current tip revision</returns>
         [CakeMethodAlias]
         [CakeAliasCategory("Tip")]
         public static Changeset HgTip(this ICakeContext context, DirectoryPath repositoryPath)
@@ -28,7 +35,10 @@ namespace Cake.Hg
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
 
-            return context.Hg(repositoryPath).Tip();
+            using (var repository = context.Hg(repositoryPath))
+            {
+                return repository.Tip();
+            }
         }
     }
 }

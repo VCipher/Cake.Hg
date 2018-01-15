@@ -6,7 +6,7 @@ using System.Threading;
 using Mercurial;
 using NUnit.Framework;
 
-namespace Cake.HgTests
+namespace Cake.Hg.Tests
 {
     public abstract class RepositoryTestsBase
     {

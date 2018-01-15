@@ -27,7 +27,10 @@ namespace Cake.Hg
             if (context == null) throw new ArgumentNullException(nameof(context));
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
 
-            context.Hg(repositoryPath).Init();
+            using (var repository = context.Hg(repositoryPath))
+            {
+                repository.Init();
+            }
         }
     }
 }

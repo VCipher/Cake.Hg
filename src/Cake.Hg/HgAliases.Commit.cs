@@ -2,6 +2,7 @@
 using Cake.Core;
 using Cake.Core.Annotations;
 using Cake.Core.IO;
+using Mercurial;
 
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable UnusedMember.Global
@@ -29,7 +30,14 @@ namespace Cake.Hg
             if (repositoryPath == null) throw new ArgumentNullException(nameof(repositoryPath));
             if (message == null) throw new ArgumentNullException(nameof(message));
 
-            context.Hg(repositoryPath).Commit(message);
+            using (var repository = context.Hg(repositoryPath))
+            {
+                var command = new CommitCommand()
+                    .WithMessage(message)
+                    .WithAddRemove();
+                
+                repository.Commit(command);
+            }
         }
     }
 }
