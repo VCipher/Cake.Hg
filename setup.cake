@@ -39,7 +39,8 @@ Task("Unzip-Addin")
     Unzip(package, addinDir);
 });
 
-BuildParameters.Tasks.IntegrationTestTask
-    .IsDependentOn("Unzip-Addin");
+BuildParameters.Tasks.IntegrationTestTask.IsDependentOn("Unzip-Addin");
+BuildParameters.Tasks.PublishMyGetPackagesTask.IsDependentOn("Run-Integration-Tests");
+BuildParameters.Tasks.PublishNuGetPackagesTask.IsDependentOn("Run-Integration-Tests");
 
 Build.RunDotNetCore();
