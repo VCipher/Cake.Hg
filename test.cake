@@ -173,12 +173,47 @@ Task("Hg-Tag")
     Information("Tagging completed.");
 });
 
+Task("Hg-Merge")
+    .IsDependentOn("Hg-Init-Commit")
+    .Does(() =>
+{
+    Information("Merging branches...");
+    
+    var repository = Hg(testRepo);
+            
+    //default branch
+    var defaultCommit = HgTip(testRepo).Hash;
+    CreateFile(Context, testRepo + "/first.txt");
+    HgCommit(testRepo, "Initial commit");
+    var firstCommit = HgTip(testRepo).Hash;
+
+    repository.Update(defaultCommit);
+    repository.Branch("new-branch");
+
+    CreateFile(Context, testRepo + "/second.txt");
+    HgCommit(testRepo, "second commit");
+    var secondCommit = HgTip(testRepo).Hash;
+
+    repository.Update("default");
+
+    var result = HgMerge(testRepo, "new-branch");
+    
+    var mergeCommit = HgTip(testRepo);
+    
+    if (result != MergeResult.Success || mergeCommit.LeftParentHash != firstCommit || mergeCommit.RightParentHash != secondCommit)
+    {
+        throw new Exception($"Merge ended with unexpected results {testRepo}");
+    }
+
+});
+
 Task("Default")
     .IsDependentOn("Hg-Init")
     .IsDependentOn("Hg-Commit")
     .IsDependentOn("Hg-Tip")
     .IsDependentOn("Hg-Diff")
-    .IsDependentOn("Hg-Tag");
+    .IsDependentOn("Hg-Tag")
+    .IsDependentOn("Hg-Merge");
 
 RunTarget(target);
 

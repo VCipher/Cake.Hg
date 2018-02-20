@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using Cake.Hg.Tests.Fakes;
 using NUnit.Framework;
+using Mercurial;
+using System.Linq;
 
 namespace Cake.Hg.Tests
 {
@@ -32,5 +34,6 @@ namespace Cake.Hg.Tests
                 Assert.That(diff, Is.Not.Empty);
             });
         }
+
     }
 }
