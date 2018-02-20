@@ -40,9 +40,22 @@ namespace Cake.Hg
                 else
                     destinationBranch = repository.Summary().Branch;
 
+                MergeResult result;
 
-                var result = repository.Merge(RevSpec.ByBranch(sourceBranch), 
-                    new MergeCommand { MergeTool = ":merge"});
+                try
+                {
+                    result = repository.Merge(RevSpec.ByBranch(sourceBranch),
+                        new MergeCommand {
+                            MergeTool = ":merge"
+                        });
+                }
+                catch (MercurialExecutionException ex)
+                {
+                    if (!ex.Message.Contains("merging with a working directory ancestor has no effect"))
+                        throw;
+                    result = MergeResult.UnresolvedFiles;
+                }
+                
 
                 if (result == MergeResult.Success)
                     repository.Commit($"Merge with {sourceBranch}");
