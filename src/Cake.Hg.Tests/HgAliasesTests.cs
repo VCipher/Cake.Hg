@@ -65,12 +65,13 @@ namespace Cake.Hg.Tests
             repository.Update("default");
 
             //merge
-            context.HgMerge(path, "dev");
+            var result = context.HgMerge(path, "dev");
 
             //check if merge was ok
             var mergeCommit = context.HgTip(path);
             Assert.Multiple(() =>
             {
+                Assert.That(result, Is.EqualTo(MergeResult.Success));
                 Assert.That(mergeCommit.LeftParentHash, Is.EqualTo(defaultCommit.Hash));
                 Assert.That(mergeCommit.RightParentHash, Is.EqualTo(devCommit.Hash));
             });
@@ -109,15 +110,60 @@ namespace Cake.Hg.Tests
             repository.Update("default");
 
             //merge
-            context.HgMerge(path, "dev", "other");
+            var result = context.HgMerge(path, "dev", "other");
 
             //check if merge was ok
             var mergeCommit = context.HgTip(path);
             Assert.Multiple(() =>
             {
+                Assert.That(result, Is.EqualTo(MergeResult.Success));
                 Assert.That(mergeCommit.Branch, Is.EqualTo("other"));
                 Assert.That(mergeCommit.LeftParentHash, Is.EqualTo(otherCommit.Hash));
                 Assert.That(mergeCommit.RightParentHash, Is.EqualTo(devCommit.Hash));
+            });
+
+        }
+
+        [Test]
+        public void HgMerge_ShouldFailIfMergeConflict()
+        {
+            var path = Repository.Path;
+            var context = new FakeCakeContext();
+            
+            context.HgInit(path);
+            var repository = context.Hg(Repository.Path);
+            
+            //default branch
+            File.WriteAllText(path + "/dummy.txt", "123");
+            context.HgCommit(path, "Initial commit");
+            var firstCommit = context.HgTip(path);
+
+            File.WriteAllText(path + "/dummy.txt", "213");
+            context.HgCommit(path, "Dummy commit");
+            var defaultCommit = context.HgTip(path);
+
+            repository.Update(firstCommit.Hash);
+
+            //dev branch
+            repository.Branch("dev");
+            File.WriteAllText(path + "/dummy.txt", "111");
+            context.HgCommit(path, "dev commit");
+            var devCommit = context.HgTip(path);
+
+            //back to default
+            repository.Update("default");
+
+            //merge
+            var result = context.HgMerge(path, "dev");
+
+            //check if merge was not performed
+            var currentCommit = repository.Log(RevSpec.ByBranch("default").Max).First();
+            Assert.Multiple(() =>
+            {
+                Assert.That(result, Is.EqualTo(MergeResult.UnresolvedFiles));
+                Assert.That(repository.Status().Where(s => s.State == FileState.Modified).Count(), 
+                    Is.EqualTo(0));
+                Assert.That(currentCommit.Hash, Is.EqualTo(defaultCommit.Hash));
             });
 
         }
