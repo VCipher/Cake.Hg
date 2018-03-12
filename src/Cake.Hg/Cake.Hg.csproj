@@ -20,7 +20,7 @@
     <Content Include="bin\$(Configuration)\net461\Mercurial.Net.dll" PackagePath="lib\net461\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.24.0" PrivateAssets="true" />
+    <PackageReference Include="Cake.Core" Version="0.26.1" PrivateAssets="true" />
     <PackageReference Include="Hg.Net" Version="0.1.5" PrivateAssets="true" />
   </ItemGroup>
 </Project>
