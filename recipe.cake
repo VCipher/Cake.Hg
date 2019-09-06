@@ -13,7 +13,8 @@ BuildParameters.SetParameters(context: Context,
     shouldRunCodecov: false,
     shouldRunDotNetCorePack: true,
     shouldRunIntegrationTests: true,
-    wyamSourceFiles: "../../src/**/{!bin,!obj,!packages,!*Tests,}/**/*.cs");
+    wyamSourceFiles: "../../src/**/{!bin,!obj,!packages,!*Tests,}/**/*.cs",
+    shouldRunGitVersion: true);
 
 BuildParameters.PrintParameters(Context);
 ToolSettings.SetToolSettings(context: Context);
