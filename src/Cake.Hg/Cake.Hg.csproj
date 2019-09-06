@@ -1,6 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <AssemblyName>Cake.Hg</AssemblyName>
     <PackageId>Cake.Hg</PackageId>
     <Authors>vCipher</Authors>
@@ -10,7 +10,7 @@
     <Copyright>Copyright © vCipher 2018</Copyright>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.Hg</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Hg</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</PackageIconUrl>
+    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageTags>cake hg mercurial</PackageTags>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
@@ -20,7 +20,7 @@
     <Content Include="bin\$(Configuration)\net461\Mercurial.Net.dll" PackagePath="lib\net461\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.26.1" PrivateAssets="true" />
+    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
     <PackageReference Include="Hg.Net" Version="0.1.5" PrivateAssets="true" />
   </ItemGroup>
 </Project>
