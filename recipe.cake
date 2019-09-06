@@ -1,4 +1,4 @@
-#load nuget:https://www.myget.org/F/cake-contrib/api/v2?package=Cake.Recipe&prerelease
+#load nuget:?package=Cake.Recipe&version=1.0.0
 
 Environment.SetVariableNames();
 
@@ -27,7 +27,7 @@ Task("Unzip-Addin")
     var nugetRoot = BuildParameters.Paths.Directories.NuGetPackages;
     var package = $"{nugetRoot}/{addin}.{semVersion}.nupkg";
     var addinDir = MakeAbsolute(Directory($"./tools/Addins/{addin}/{addin}"));
-    
+
     if (DirectoryExists(addinDir))
     {
         DeleteDirectory(addinDir, new DeleteDirectorySettings {
