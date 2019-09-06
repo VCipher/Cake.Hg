@@ -8,8 +8,10 @@
     <Description>Cake AddIn that extends Cake with Mercurial features</Description>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Copyright>Copyright © vCipher 2018</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.Hg</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/cake-contrib/Cake.Hg</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.Hg.git</RepositoryUrl>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageTags>cake hg mercurial</PackageTags>
     <DebugSymbols>true</DebugSymbols>
