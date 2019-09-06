@@ -21,6 +21,8 @@ namespace Cake.Hg.Tests.Fakes
         public IProcessRunner ProcessRunner => _context.ProcessRunner;
         public IRegistry Registry => _context.Registry;
         public IToolLocator Tools => _context.Tools;
+        public ICakeDataResolver Data => _context.Data;
+        public ICakeConfiguration Configuration => _context.Configuration;
 
         public FakeCakeContext()
         {
@@ -31,15 +33,16 @@ namespace Cake.Hg.Tests.Fakes
             var globber = new Globber(fileSystem, environment);
             var log = new FakeLog();
             var args = new FakeCakeArguments();
-            var processRunner = new ProcessRunner(environment, log);
-            var registry = new WindowsRegistry();
             var toolRepo = new ToolRepository(environment);
             var config =
                 new CakeConfigurationProvider(fileSystem, environment)
                     .CreateConfiguration(testsDir,
-                        new Dictionary<string, string>());
+                             new Dictionary<string, string>());
             var toolResolutionStrategy = new ToolResolutionStrategy(fileSystem, environment, globber, config);
             var toolLocator = new ToolLocator(environment, toolRepo, toolResolutionStrategy);
+            var processRunner = new ProcessRunner(fileSystem, environment, log, toolLocator, config);
+            var registry = new WindowsRegistry();
+            var dataService = new FakeDataService();
 
             _context = new CakeContext(
                 fileSystem, 
@@ -49,7 +52,9 @@ namespace Cake.Hg.Tests.Fakes
                 args, 
                 processRunner, 
                 registry,
-                toolLocator);
+                toolLocator,
+                dataService,
+                config);
             
             _context.Environment.WorkingDirectory = testsDir;
         }
